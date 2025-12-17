@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  outputFileTracingRoot: '/Users/susildhami/Desktop/ujjyaloweb/website/UjjyaloWeb/frontend',
 };
 
 export default nextConfig;
