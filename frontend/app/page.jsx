@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const page = ({ onClose }) => {
   const [open, setOpen] = useState(false);
@@ -20,7 +20,7 @@ const page = ({ onClose }) => {
       <h1 className="text-5xl text-[#f7a11f] text-center font-semibol mb-5">
         Hello World
       </h1>
-      
+
       {open && (
         <>
           <div
@@ -77,7 +77,7 @@ const page = ({ onClose }) => {
                 </h1>
 
                 {/* Sub text */}
-                <p className="relative text-xl text-white/80 text-center mb-8">
+                <p className="relative text-xl text-white/80 text-center mb-6">
                   You set the budget. We deliver quality.
                   <br />
                   <span className="text-white text-xl text-center font-medium">
@@ -86,14 +86,14 @@ const page = ({ onClose }) => {
                 </p>
 
                 {/* CTA */}
-                <div className="relative flex justify-center mb-8">
-                  <Link href="/about">
+                <div className="mb-6">
+                  <div className="relative flex justify-center">
                     <button className="rounded-full px-9 py-1 bg-white/15 backdrop-blur-md border border-white/30 font-semibold text-[#daa520] hover:scale-105 hover:bg-white/25 transition-all duration-300">
                       Claim Your Spot
                     </button>
-                  </Link>
+                  </div>
+                  <p className="text-center underline mt-2">see your options</p>
                 </div>
-
                 {/* Footer */}
                 <div className="relative flex flex-wrap justify-between text-xs text-white/70">
                   <span>⚡ Spots filling fast</span>
