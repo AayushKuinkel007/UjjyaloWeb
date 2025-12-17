@@ -30,7 +30,7 @@ const Hero = () => {
         <div className="flex justify-center">
         <div className="inline-flex items-center gap-2 muted border border-[#454443] text-white px-4 py-2 rounded-full font-medium shadow-md">
           {/* Orange dot */}
-          <span className="w-3 h-3 bg-[#fa8938] rounded-full animate-pulse"></span>
+          <span className="w-3 h-3 bg-[#f48c25] rounded-full animate-pulse"></span>
           {/* Text */}
           <span>Holiday Offer !</span>
         </div>
@@ -54,8 +54,8 @@ const Hero = () => {
 
         {/* Hero CTA */}
         <div className="flex justify-center gap-5 mb-10">
-<button className="relative flex items-center gap-2 p-3 rounded-xl text-white bg-[#fa8938]
-  shadow-[0_0_20px_#fa8938] hover:shadow-[0_0_40px_#fa8938] transition-shadow duration-500">
+<button className="relative flex items-center gap-2 p-3 rounded-xl text-white bg-[#f48c25]
+  shadow-[0_0_20px_#f48c25] hover:shadow-[0_0_40px_#f48c25] transition-shadow duration-500">
   Illuminate My Project
   <ArrowRight size={22} weight="bold" />
 </button>

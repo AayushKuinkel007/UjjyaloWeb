@@ -64,10 +64,10 @@ const Header = () => {
             <button
               key={item.name}
               onClick={() => scrollTo(item.href)}
-              className="relative group hover:text-[#fa8938] transition"
+              className="relative group hover:text-[#f48c25] transition"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#fa8938] group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f48c25] group-hover:w-full transition-all duration-300" />
             </button>
           ))}
         </nav>
@@ -76,8 +76,8 @@ const Header = () => {
         <div className="hidden md:block">
           <button
             onClick={() => scrollTo("#contact")}
-            className="px-3 py-2 rounded-xl text-white bg-[#fa8938]
-  shadow-[0_0_20px_#fa8938] hover:shadow-[0_0_40px_#fa8938] transition-shadow duration-500"
+            className="px-3 py-2 rounded-xl text-white bg-[#f48c25]
+  shadow-[0_0_20px_#f48c25] hover:shadow-[0_0_40px_#f48c25] transition-shadow duration-500"
           >
             Get Started
           </button>
@@ -96,14 +96,14 @@ const Header = () => {
             <button
               key={item.name}
               onClick={() => scrollTo(item.href)}
-              className="text-lg hover:text-[#fa8938]"
+              className="text-lg hover:text-[#f48c25]"
             >
               {item.name}
             </button>
           ))}
           <button
             onClick={() => scrollTo("#contact")}
-            className="mt-2 px-5 py-2 bg-[#fa8938] rounded-full"
+            className="mt-2 px-5 py-2 bg-[#f48c25] rounded-full"
           >
             Get Started
           </button>
