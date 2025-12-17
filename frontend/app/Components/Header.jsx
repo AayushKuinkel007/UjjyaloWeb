@@ -32,7 +32,7 @@ const Header = () => {
           ? "bg-[#0c2342] py-4 shadow-none w-full"
           : scrolled
           ? "backdrop-blur-md bg-[#0c2342] shadow-lg py-2 w-full lg:w-[900px] lg:left-1/2 lg:-translate-x-1/2 rounded-b-none lg:rounded-[20px] mt-0 lg:mt-2"
-          : "bg-transparent py-4 w-full"
+          : "bg-transparent py-4.5 w-full"
       }`}
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between">
