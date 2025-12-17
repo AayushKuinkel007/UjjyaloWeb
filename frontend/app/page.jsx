@@ -13,8 +13,8 @@ const page = () => {
 
       <main className="pt-24">
         <Hero />
-        <ProjectsGrid />
         <Services/>
+        <ProjectsGrid />
       </main>
 
       <OpeningModal />

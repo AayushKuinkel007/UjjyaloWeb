@@ -6,8 +6,9 @@ import logo from "../assets/logo.png";
 
 const navItems = [
   { name: "Services", href: "#services" },
-  { name: "About", href: "#about" },
   { name: "Portfolio", href: "#portfolio" },
+  { name: "Testimonials", href: "#testimonial" },
+
 ];
 
 const Header = () => {
