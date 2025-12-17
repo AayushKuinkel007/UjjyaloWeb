@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+/* Global page background */
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+/* Global background */
+html {
+  background: radial-gradient(
+      ellipse 80% 60% at 50% 0%,
+      rgba(99, 102, 241, 0.25),
+      transparent 70%
+    ),
+    #000000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background: transparent; /* IMPORTANT */
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
