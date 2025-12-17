@@ -109,9 +109,9 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="group bg-[#1a1c2e] border border-white/10  border border-white/20 p-6 rounded-xl flex flex-col gap-4 transition-shadow duration-300"
+              className="group bg-[#1a1c2e] border border-white/10  border border-white/20 p-6 rounded-xl flex flex-col gap-4 transition-shadow duration-300 hover:scale-105"
             >
-              <div className="text-white bg-[#0c2342] w-fit p-3 rounded-xl group-hover:shadow-[0_0_25px_#f48c25] transition-shadow">
+              <div className="text-white bg-[#0c2342] w-fit p-3 rounded-xl group-hover:shadow-[0_0_25px_#f48c25] transition-shadow transition-all duration-500">
                 {service.icon}
               </div>
               <h3 className="text-xl font-semibold text-white">

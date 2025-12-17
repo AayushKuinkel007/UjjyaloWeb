@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { List, X } from "phosphor-react";
 import Image from "next/image";
-import logo from "../assets/logo.png";
+import logo from "../Assets/logo.png";
 
 const navItems = [
   { name: "Services", href: "#services" },
