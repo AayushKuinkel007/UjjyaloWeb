@@ -89,7 +89,7 @@ const OpeningModal = () => {
                       Claim Your Spot
                     </button>
                   </div>
-                  <p className="text-center underline mt-2">see your options</p>
+                  <p className="text-center text-xs underline mt-2">see pricing options</p>
                 </div>
                 {/* Footer */}
                 <div className="relative flex flex-wrap justify-between text-xs text-white/70">
