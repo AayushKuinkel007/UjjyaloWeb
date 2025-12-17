@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Header from "./Components/Header";
 
 const page = ({ onClose }) => {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ const page = ({ onClose }) => {
 
   return (
     <>
-
+    <Header/>
       {open && (
         <>
           <div
