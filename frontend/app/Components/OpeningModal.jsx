@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
+import logo from "../Assets/logo.png"
 const OpeningModal = () => {
   const [open, setOpen] = useState(false);
 
@@ -20,7 +20,8 @@ const OpeningModal = () => {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4"
             onClick={handleClose}
           >
-            <div className="px-[50px] py-[50px] rounded-2xl bg-[#0c2342] backdrop-blur-xl">
+            <div className="relative px-[50px] py-[50px] rounded-2xl bg-[#0c2342] backdrop-blur-xl">
+              <img src={logo.src} alt="logo" className="h-40 w-40 absolute top-[-35px] lg:left-55 left-35 z-10"/>
               {/* Modal Card */}
               <motion.div
                 className="relative w-full max-w-xl rounded-2xl p-8 text-white border border-white/20 shadow-2xl"
