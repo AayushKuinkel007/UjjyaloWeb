@@ -17,9 +17,6 @@ const page = ({ onClose }) => {
 
   return (
     <>
-      <h1 className="text-5xl text-[#f7a11f] text-center font-semibol mb-5">
-        Hello World
-      </h1>
 
       {open && (
         <>
