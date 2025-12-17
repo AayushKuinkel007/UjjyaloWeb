@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import { List, X } from "phosphor-react";
+import Image from "next/image";
 import logo from "../assets/logo.png";
 
 const navItems = [
@@ -20,58 +21,60 @@ const Header = () => {
   }, []);
 
   const scrollTo = (id) => {
-    const section = document.querySelector(id);
-    section?.scrollIntoView({ behavior: "smooth" });
+    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
   return (
     <header
-      className={`fixed block w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "backdrop-blur-sm bg-white/10 shadow-lg py-2 px-6 text-white"
-          : "bg-transparent py-4 text-white"
-      }`}
+          ? "backdrop-blur-md bg-white/10 shadow-lg py-2 px-6"
+          : "bg-transparent py-4 px-6"
+      } text-white`}
     >
-      <div className="mx-auto flex items-center justify-between max-w-7xl">
+      <div className="mx-auto max-w-7xl flex items-center justify-between">
         {/* Logo */}
-        <img
-          src={logo.src}
-          alt="Logo"
-          className={`w-16 rounded-md cursor-pointer transition-all ${
-            scrolled ? "h-12 scale-150" : "h-16 scale-150"
-          }`}
+        <div
           onClick={() => scrollTo("#home")}
-        />
+          className="cursor-pointer flex items-center"
+        >
+          <Image
+            src={logo}
+            alt="Logo"
+            width={64}
+            height={64}
+            className="rounded-md scale-150"
+          />
+        </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex space-x-8">
           {navItems.map((item) => (
-            <a
+            <button
               key={item.name}
-              href={item.href}
               onClick={() => scrollTo(item.href)}
-              className="relative group hover:text-[#fa8938] transition-colors"
+              className="relative group hover:text-[#fa8938] transition"
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#fa8938] group-hover:w-full transition-all duration-300" />
-            </a>
+            </button>
           ))}
         </nav>
 
-        {/* Get Started button */}
+        {/* CTA */}
         <div className="hidden md:block">
           <button
-            className="px-5 py-2 bg-[#fa8938] text-white font-medium rounded-full hover:brightness-110 transition"
             onClick={() => scrollTo("#contact")}
+            className="px-5 py-2 bg-[#fa8938] rounded-full font-medium hover:brightness-110 transition"
           >
             Get Started
           </button>
         </div>
 
-        {/* Mobile Menu button */}
+        {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-white"
+          className="md:hidden p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <List size={24} />}
@@ -80,20 +83,19 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden fixed top-16 left-0 w-full bg-[#0c2342]/90 backdrop-blur-md border-t border-white/20 py-6 px-6 flex flex-col gap-4 animate-slideDown">
+        <div className="md:hidden fixed top-[72px] left-0 w-full z-40 bg-[#0c2342]/95 backdrop-blur-md px-6 py-6 flex flex-col gap-4">
           {navItems.map((item) => (
-            <a
+            <button
               key={item.name}
-              href={item.href}
               onClick={() => scrollTo(item.href)}
-              className="hover:text-[#fa8938] transition-colors text-lg"
+              className="text-lg hover:text-[#fa8938]"
             >
               {item.name}
-            </a>
+            </button>
           ))}
           <button
-            className="w-full mt-2 px-5 py-2 bg-[#fa8938] text-white font-medium rounded-full hover:brightness-110 transition"
             onClick={() => scrollTo("#contact")}
+            className="mt-2 px-5 py-2 bg-[#fa8938] rounded-full"
           >
             Get Started
           </button>
