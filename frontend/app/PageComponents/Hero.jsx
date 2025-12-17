@@ -24,15 +24,15 @@ const Hero = () => {
 
   return (
     <>
-      <section id="home" className="mt-8 overflow-hidden">
+      <section id="home" className="mt-7 overflow-hidden">
 
         {/* Limited Seats */}
         <div className="flex justify-center">
-        <div className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white px-4 py-2 rounded-full font-medium shadow-md">
+        <div className="inline-flex items-center gap-2 muted border border-[#454443] text-white px-4 py-2 rounded-full font-medium shadow-md">
           {/* Orange dot */}
           <span className="w-3 h-3 bg-[#fa8938] rounded-full animate-pulse"></span>
           {/* Text */}
-          <span>Holiday Offer</span>
+          <span>Holiday Offer !</span>
         </div>
         </div>
 
@@ -64,7 +64,7 @@ const Hero = () => {
         </div>
 
         {/* 🔥 Flowing Menu (REFERENCE-BASED) */}
-        <div className="relative overflow-hidden py-4 w-full sm:w-[95%] md:w-[45%] lg:w-[40%] mx-auto mb-10">
+        <div className="relative overflow-hidden py-4 w-full sm:w-[95%] md:w-[45%] lg:w-[40%] mx-auto mb-8">
           {/* Fade edges */}
           <div className="pointer-events-none absolute left-0 top-0 h-full w-10 bg-gradient-to-r from-black to-transparent z-10" />
           <div className="pointer-events-none absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-black to-transparent z-10" />
