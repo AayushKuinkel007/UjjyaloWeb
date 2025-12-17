@@ -68,7 +68,7 @@ const ProjectCard = ({ project }) => {
 
 export default function ProjectsGrid() {
   return (
-    <section className="h-screen w-full bg-[#030303] flex flex-col overflow-hidden p-8 md:p-12">
+    <section id='portfolio' className="h-screen w-full bg-[#030303] flex flex-col overflow-hidden p-8 md:p-12">
       
       {/* Our Projects Header */}
       <div className="flex justify-center mb-10">
