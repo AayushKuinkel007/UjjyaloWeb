@@ -54,11 +54,13 @@ const Hero = () => {
 
         {/* Hero CTA */}
         <div className="flex justify-center gap-5 mb-10">
-          <button className="flex items-center gap-2 p-3 rounded-xl text-white bg-[#fa8938]">
-            Illuminate My Project
-            <ArrowRight size={22} weight="bold" />
-          </button>
-          <button className="p-3 rounded-xl text-white bg-[#454443] border border-white">
+<button className="relative flex items-center gap-2 p-3 rounded-xl text-white bg-[#fa8938]
+  shadow-[0_0_20px_#fa8938] hover:shadow-[0_0_40px_#fa8938] transition-shadow duration-500">
+  Illuminate My Project
+  <ArrowRight size={22} weight="bold" />
+</button>
+
+          <button className="p-3 rounded-xl text-white bg-[#454443]">
             View Our Work
           </button>
         </div>

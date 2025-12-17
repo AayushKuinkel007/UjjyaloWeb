@@ -76,7 +76,8 @@ const Header = () => {
         <div className="hidden md:block">
           <button
             onClick={() => scrollTo("#contact")}
-            className="px-5 py-2 bg-[#fa8938] rounded-2xl font-medium hover:brightness-110 transition me-2"
+            className="px-3 py-2 rounded-xl text-white bg-[#fa8938]
+  shadow-[0_0_20px_#fa8938] hover:shadow-[0_0_40px_#fa8938] transition-shadow duration-500"
           >
             Get Started
           </button>
