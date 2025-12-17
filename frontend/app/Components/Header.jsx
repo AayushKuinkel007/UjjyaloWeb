@@ -31,15 +31,19 @@ const Header = () => {
         isOpen
           ? "bg-[#0c2342] py-4 shadow-none w-full"
           : scrolled
-          ? "backdrop-blur-md bg-[#0c2342] shadow-lg py-2 w-full lg:w-[900px] lg:left-1/2 lg:-translate-x-1/2 rounded-b-none lg:rounded-[20px] mt-0 lg:mt-2"
-          : "bg-transparent py-4 w-full"
+          ? "backdrop-blur-md bg-[#0c2342] shadow-lg w-[95%] lg:w-[700px] lg:left-1/2 lg:-translate-x-1/2 lg:rounded-[20px] mt-2 mx-2.5 rounded-[20px]"
+          : "bg-[#0c2342] lg:bg-transparent lg:py-1 w-[95%] lg:w-full ms-2.5 mt-2 rounded-[20px]"
       }`}
     >
-      <div className="mx-auto max-w-7xl flex items-center justify-between">
+      <div className={`mx-auto max-w-7xl flex items-center justify-between ${
+        scrolled
+        ? "lg:jusitfy-evenly"
+        : "lg:justify-evenly"
+      }`}>
         {/* Logo */}
         <div
           onClick={() => scrollTo("#home")}
-          className="cursor-pointer flex items-center"
+          className="cursor-pointer flex items-center ms-2"
         >
           <Image
             src={logo}
@@ -68,7 +72,7 @@ const Header = () => {
         <div className="hidden md:block">
           <button
             onClick={() => scrollTo("#contact")}
-            className="px-5 py-2 bg-[#fa8938] rounded-full font-medium hover:brightness-110 transition"
+            className="px-5 py-2 bg-[#fa8938] rounded-full font-medium hover:brightness-110 transition me-2"
           >
             Get Started
           </button>
