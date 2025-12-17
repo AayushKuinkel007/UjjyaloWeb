@@ -86,7 +86,7 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 text-md bg-[#454443]/40 backdrop-blur-lg font-medium text-white rounded-full mb-4">
+          <span className="inline-block px-8 py-3 bg-[#1a1c2e] border border-white/10 font-bold uppercase text-white text-xs rounded-full mb-4">
             Our Services
           </span>
           <h2 className="text-[60px] font-bold mb-2">
@@ -109,7 +109,7 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="group bg-white/10 backdrop-blur-lg border border-white/20 p-6 rounded-xl flex flex-col gap-4 transition-shadow duration-300"
+              className="group bg-[#1a1c2e] border border-white/10  border border-white/20 p-6 rounded-xl flex flex-col gap-4 transition-shadow duration-300"
             >
               <div className="text-white bg-[#0c2342] w-fit p-3 rounded-xl group-hover:shadow-[0_0_25px_#f48c25] transition-shadow">
                 {service.icon}
@@ -126,7 +126,7 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-              <button className="mt-auto text-[#f48c25] font-medium flex items-center gap-2 hover:bg-[#f48c25] hover:text-black w-fit p-3 rounded-xl transition-colors">
+              <button className="mt-auto text-[#f48c25] font-medium flex items-center gap-2 text-white hover:bg-[#f48c25] hover:text-black w-fit p-3 rounded-xl transition-colors">
                 Learn More <ArrowRight size={22} weight="bold" />
               </button>
             </motion.div>
