@@ -21,6 +21,9 @@ const OpeningModal = () => {
             onClick={handleClose}
           >
             <div className="relative px-[50px] py-[50px] rounded-2xl bg-[#0c2342] backdrop-blur-xl">
+              <div>
+                <button className="absolute top-2 right-5 py-2 px-3 bg-[#454443] rounded-xl hover:bg-[#454443]/60" onClick={handleClose}>X</button>
+              </div>
               <img src={logo.src} alt="logo" className="h-40 w-40 absolute top-[-35px] lg:left-55 left-35 z-10"/>
               {/* Modal Card */}
               <motion.div

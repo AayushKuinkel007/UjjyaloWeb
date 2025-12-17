@@ -63,14 +63,26 @@ const servicesData = [
   {
     icon: <MagnifyingGlass size={32} />,
     title: "Website Performance & SEO",
-    description: "Lightning-fast websites optimized for search engines and real-world performance.",
-    features: ["Technical SEO", "Page Speed", "Core Web Vitals", "Analytics Setups"],
+    description:
+      "Lightning-fast websites optimized for search engines and real-world performance.",
+    features: [
+      "Technical SEO",
+      "Page Speed",
+      "Core Web Vitals",
+      "Analytics Setups",
+    ],
   },
   {
     icon: <Lightning size={32} />,
     title: "Page Design & Development",
-    description: "Conversion-focused landing pages designed to generate leads, signups, and sales.",
-    features: ["24-48h Hero Sections", "CI/CTA Optimization", "Fast Load Speed", "SEO Structure"],
+    description:
+      "Conversion-focused landing pages designed to generate leads, signups, and sales.",
+    features: [
+      "24-48h Hero Sections",
+      "CI/CTA Optimization",
+      "Fast Load Speed",
+      "SEO Structure",
+    ],
   },
 ];
 
@@ -109,7 +121,21 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="group bg-[#1a1c2e] border border-white/10  border border-white/20 p-6 rounded-xl flex flex-col gap-4 transition-shadow duration-300 hover:scale-105"
+              className="
+    group
+    bg-[#1a1c2e]
+    border border-white/20
+    p-6
+    rounded-xl
+    flex flex-col gap-4
+    transform
+    transition-all
+    duration-500
+    ease-out
+    hover:scale-[1.05]
+    hover:shadow-2xl
+    will-change-transform
+  "
             >
               <div className="text-white bg-[#0c2342] w-fit p-3 rounded-xl group-hover:shadow-[0_0_25px_#f48c25] transition-shadow transition-all duration-500">
                 {service.icon}
