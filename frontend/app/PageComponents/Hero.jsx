@@ -5,11 +5,12 @@ import React, { useEffect, useState } from "react";
 
 const Hero = () => {
   const Works = [
-    { title: "Web Design" },
-    { title: "Web Development" },
-    { title: "App Design" },
-    { title: "App Development" },
-    { title: "Ghost Writing" },
+    { title: "Web UI/UX Design" },
+    { title: "Custom Web Development" },
+    { title: "Responsive Web Design" },
+    { title: "Website Redesign & Optimization" },
+    { title: "Page Design & Development" },
+    { title: "Website Performance and SEO" },
   ];
 
   const [scrollDir, setScrollDir] = useState("right");
