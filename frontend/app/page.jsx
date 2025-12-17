@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import OpeningModal from "./Components/OpeningModal";
 import Hero from "./PageComponents/Hero";
 import ProjectsGrid from "./PageComponents/Projects";
+import Services from "./PageComponents/Services";
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
       <main className="pt-24">
         <Hero />
         <ProjectsGrid />
+        <Services/>
       </main>
 
       <OpeningModal />
