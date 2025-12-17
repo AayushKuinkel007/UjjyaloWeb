@@ -27,11 +27,13 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-md bg-white/10 shadow-lg py-2 px-6"
-          : "bg-transparent py-4 px-6"
-      } text-white`}
+      className={`fixed top-0 z-50 text-white px-4 sm:px-6 lg:px-0 ${
+        isOpen
+          ? "bg-[#0c2342] py-4 shadow-none w-full"
+          : scrolled
+          ? "backdrop-blur-md bg-[#0c2342] shadow-lg py-2 w-full lg:w-[900px] lg:left-1/2 lg:-translate-x-1/2 rounded-b-none lg:rounded-[20px] mt-0 lg:mt-2"
+          : "bg-transparent py-4 w-full"
+      }`}
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between">
         {/* Logo */}
@@ -73,17 +75,14 @@ const Header = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className="md:hidden p-2"
-          onClick={() => setIsOpen(!isOpen)}
-        >
+        <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <List size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden fixed top-[72px] left-0 w-full z-40 bg-[#0c2342]/95 backdrop-blur-md px-6 py-6 flex flex-col gap-4">
+        <div className="md:hidden fixed top-[72px] left-0 w-full z-40 bg-[#0c2342]/95 rounded-b-2xl backdrop-blur-md px-6 py-6 flex flex-col gap-4">
           {navItems.map((item) => (
             <button
               key={item.name}
