@@ -55,7 +55,11 @@ const Header = () => {
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className={`hidden md:flex ${
+          scrolled
+          ? "space-x-10"
+          : "space-x-[100px]"
+        }`}>
           {navItems.map((item) => (
             <button
               key={item.name}
@@ -72,7 +76,7 @@ const Header = () => {
         <div className="hidden md:block">
           <button
             onClick={() => scrollTo("#contact")}
-            className="px-5 py-2 bg-[#fa8938] rounded-full font-medium hover:brightness-110 transition me-2"
+            className="px-5 py-2 bg-[#fa8938] rounded-2xl font-medium hover:brightness-110 transition me-2"
           >
             Get Started
           </button>
