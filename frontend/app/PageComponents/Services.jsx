@@ -88,7 +88,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 relative">
+    <section id="services" className="mb-10 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

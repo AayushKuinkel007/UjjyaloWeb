@@ -25,7 +25,7 @@ const Hero = () => {
 
   return (
     <>
-      <section id="home" className="mt-7 overflow-hidden">
+      <section id="home" className="mt-7 mb-10 overflow-hidden">
         {/* Limited Seats */}
         <div className="flex justify-center">
           <div className="inline-flex items-center gap-2 muted border border-[#454443] text-white px-4 py-2 rounded-full font-medium shadow-md">
