@@ -247,7 +247,7 @@ Who is it for?"
                 checked={isReady}
                 onChange={(e) => setIsReady(e.target.checked)}
               />
-              <div className="w-5 h-5 rounded border-2 border-[#2a2a2a] bg-[#0f0f0f] peer-checked:border-[#f48c25] peer-checked:bg-[#f48c25] transition-all duration-200 flex items-center justify-center">
+              <div className="w-5 h-5 rounded-full border-2 border-[#2a2a2a] bg-[#0f0f0f] peer-checked:border-[#f48c25] peer-checked:bg-[#f48c25] transition-all duration-200 flex items-center justify-center">
                 {isReady && (
                   <Check size={14} weight="bold" className="text-black" />
                 )}
@@ -304,18 +304,26 @@ const FormOptions = ({
           : selected === item;
 
         return (
-          <button
-            key={i}
-            type="button"
-            onClick={() => onToggle(item)}
-            className={`rounded-lg border px-4 py-3 text-sm font-medium text-left transition-all duration-200 ${
-              isSelected
-                ? "bg-[#f48c25] text-white"
-                : "border-[#2a2a2a] bg-[#0f0f0f] text-gray-300 hover:border-[#3a3a3a] hover:bg-[#1a1a1a]"
-            }`}
-          >
-            {item}
-          </button>
+<button
+  key={i}
+  type="button"
+  onClick={() => onToggle(item)}
+  className={`flex items-center gap-3 rounded-full px-5 py-3 text-sm font-medium transition-all duration-200 ${
+    isSelected
+      ? "bg-[#ff9a1f] text-black"
+      : "border border-[#2a2a2a] bg-[#0f0f0f] text-gray-300 hover:bg-[#1a1a1a]"
+  }`}
+>
+  {/* Tick */}
+  {isSelected && (
+    <Check size={16} weight="bold" className="text-black" />
+  )}
+
+  {/* Label */}
+  <span>{item}</span>
+</button>
+
+
         );
       })}
     </div>
