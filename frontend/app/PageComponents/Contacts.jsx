@@ -32,13 +32,6 @@ const contactCards = [
   },
 ];
 
-const whyWorkWithUs = [
-  "Dedicated project manager for every client",
-  "Transparent pricing with no hidden fees",
-  "Unlimited revisions until you're satisfied",
-  "Post-launch support included",
-];
-
 const inputFields = [
   {
     label: "Full Name",
@@ -317,7 +310,7 @@ const FormOptions = ({
             onClick={() => onToggle(item)}
             className={`rounded-lg border px-4 py-3 text-sm font-medium text-left transition-all duration-200 ${
               isSelected
-                ? "border-[#f48c25] bg-[#f48c25]/10 text-white"
+                ? "bg-[#f48c25] text-white"
                 : "border-[#2a2a2a] bg-[#0f0f0f] text-gray-300 hover:border-[#3a3a3a] hover:bg-[#1a1a1a]"
             }`}
           >
