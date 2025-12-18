@@ -1,110 +1,136 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import { Plus, Minus } from "phosphor-react";
 
 const FAQs = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const faqs = [
+    {
+      q: "What website design and development services do you offer?",
+      a: "We provide end-to-end website design and website development services, including UI/UX design, custom web development, responsive layouts, performance optimization, and deployment.",
+    },
+    {
+      q: "How long does it take to design and develop a website?",
+      a: "Most standard websites take 2 to 4 weeks, while complex or custom web applications may take longer. We define clear milestones before starting.",
+    },
+    {
+      q: "Do you build custom websites or use templates?",
+      a: "We build 100% custom websites tailored to your brand, audience, and business goals.",
+    },
+    {
+      q: "Are your websites mobile-friendly?",
+      a: "Yes. All websites are fully responsive and mobile-first across all devices.",
+    },
+    {
+      q: "Can you redesign an existing website?",
+      a: "Yes. We modernize existing websites to improve UI, UX, performance, and SEO.",
+    },
+    {
+      q: "Is SEO included?",
+      a: "Yes. We follow SEO best practices including clean code, fast load times, and Core Web Vitals compliance.",
+    },
+    {
+      q: "Will my website be fast and secure?",
+      a: "Absolutely. Performance and security are top priorities in all our projects.",
+    },
+    {
+      q: "Can I update content myself?",
+      a: "Yes. We provide CMS or simple setups so you can manage content easily.",
+    },
+    {
+      q: "Do you offer post-launch support?",
+      a: "Yes. We provide ongoing maintenance, updates, and monitoring after launch.",
+    },
+    {
+      q: "How do I get started?",
+      a: "Simply contact us through our website and we'll guide you through the next steps.",
+    },
+  ];
+
   return (
-    <section className="w-full">
+    <section className="w-full py-12 md:py-16 px-4">
       {/* Title */}
-      <h2 className="text-xl font-semibold text-white mb-6 text-center">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 md:mb-12 text-center">
         FAQ's
       </h2>
 
       {/* FAQ LIST */}
-      <div className="space-y-8">
-        {[
-          {
-            q: "What website design and development services do you offer?",
-            a: "We provide end-to-end website design and website development services, including UI/UX design, custom web development, responsive layouts, performance optimization, and deployment.",
-          },
-          {
-            q: "How long does it take to design and develop a website?",
-            a: "Most standard websites take 2 to 4 weeks, while complex or custom web applications may take longer. We define clear milestones before starting.",
-          },
-          {
-            q: "Do you build custom websites or use templates?",
-            a: "We build 100% custom websites tailored to your brand, audience, and business goals.",
-          },
-          {
-            q: "Are your websites mobile-friendly?",
-            a: "Yes. All websites are fully responsive and mobile-first across all devices.",
-          },
-          {
-            q: "Can you redesign an existing website?",
-            a: "Yes. We modernize existing websites to improve UI, UX, performance, and SEO.",
-          },
-          {
-            q: "Is SEO included?",
-            a: "Yes. We follow SEO best practices including clean code, fast load times, and Core Web Vitals compliance.",
-          },
-          {
-            q: "Will my website be fast and secure?",
-            a: "Absolutely. Performance and security are top priorities in all our projects.",
-          },
-          {
-            q: "Can I update content myself?",
-            a: "Yes. We provide CMS or simple setups so you can manage content easily.",
-          },
-          {
-            q: "Do you offer post-launch support?",
-            a: "Yes. We provide ongoing maintenance, updates, and monitoring after launch.",
-          },
-          {
-            q: "How do I get started?",
-            a: "Simply contact us through our website and we’ll guide you through the next steps.",
-          },
-        ].map((item, i) => (
-          <details
-            key={i}
-            className="
-              group
-              bg-white/10
-              backdrop-blur-xl
-              border border-white/20
-              rounded-xl
-              p-4
+      <div className="max-w-4xl mx-auto space-y-4 md:space-y-5">
+        {faqs.map((item, i) => {
+          const isOpen = openIndex === i;
 
-              transition-all
-              duration-300
-              ease-[cubic-bezier(.34,1.56,.64,1)]
-
-              hover:-translate-y-0.5
-              hover:shadow-xl
-              open:shadow-xl
-              active:scale-[0.98]
-            "
-          >
-            {/* Question */}
-            <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-medium text-white">
-              <span className="pr-4">{item.q}</span>
-
-              <span className="relative w-6 h-6 flex items-center justify-center text-lg">
-                <span className="absolute transition-all duration-300 group-open:scale-0 group-open:opacity-0">
-                  +
-                </span>
-                <span className="absolute transition-all duration-300 scale-0 opacity-0 group-open:scale-100 group-open:opacity-100">
-                  −
-                </span>
-              </span>
-            </summary>
-
-            {/* Answer */}
+          return (
             <div
-              className="
-                overflow-hidden
+              key={i}
+              onClick={() => toggleFAQ(i)}
+              className={`
+                cursor-pointer
+                bg-[#0f0f0f]
+                border border-[#2a2a2a]
+                rounded-2xl
+                p-5 md:p-6 lg:p-7
                 transition-all
-                duration-500
-                ease-[cubic-bezier(.34,1.56,.64,1)]
-                opacity-0
-                max-h-0
-                group-open:opacity-100
-                group-open:max-h-96
-              "
+                duration-300
+                hover:border-[#f48c25]
+                ${isOpen ? "border-[#f48c25]" : ""}
+              `}
             >
-              <p className="mt-3 text-sm text-white/75 leading-relaxed">
-                {item.a}
-              </p>
+              {/* Question */}
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-xl font-semibold text-white pr-4 leading-tight">
+                  {item.q}
+                </h3>
+
+                {/* Icon */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleFAQ(i);
+                  }}
+                  className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-[#1a1a1a] hover:bg-[#f48c25] transition-colors duration-300 group"
+                >
+                  {isOpen ? (
+                    <Minus
+                      size={20}
+                      weight="bold"
+                      className="text-white group-hover:text-black transition-colors duration-300 md:w-6 md:h-6"
+                    />
+                  ) : (
+                    <Plus
+                      size={20}
+                      weight="bold"
+                      className="text-white group-hover:text-black transition-colors duration-300 md:w-6 md:h-6"
+                    />
+                  )}
+                </button>
+              </div>
+
+              {/* Answer */}
+              <div
+                className={`
+                  overflow-hidden
+                  transition-all
+                  duration-500
+                  ease-in-out
+                  ${
+                    isOpen
+                      ? "max-h-96 opacity-100 mt-4 md:mt-5"
+                      : "max-h-0 opacity-0"
+                  }
+                `}
+              >
+                <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed">
+                  {item.a}
+                </p>
+              </div>
             </div>
-          </details>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

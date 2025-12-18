@@ -20,6 +20,7 @@ const page = () => {
         <Services />
         <ProjectsGrid />
         <Process />
+        <FAQs />
         {/* <Contacts/> */}
       </main>
 
