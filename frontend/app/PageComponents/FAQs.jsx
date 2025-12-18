@@ -4,8 +4,8 @@ const FAQs = () => {
   return (
     <>
       <section className="w-full max-w-3xl mx-auto px-4 py-20">
-        <h2 className="text-3xl font-bold text-center mb-10 text-white">
-          Questions & Answers
+        <h2 className="text-5xl font-bold text-center mb-10 text-white">
+          FAQ's
         </h2>
 
         <div className="space-y-4">
@@ -55,7 +55,9 @@ const FAQs = () => {
               key={i}
               className="
     group
-    bg-gray-800
+    bg-white/10
+    backdrop-blur-xl
+    border border-white/20
     rounded-2xl
     p-6
 

@@ -123,17 +123,23 @@ const Services = () => {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className="
     group
-    bg-[#1a1c2e]
+    relative
+    bg-white/10
+    backdrop-blur-xl
     border border-white/20
-    p-6
     rounded-xl
+    p-6
     flex flex-col gap-4
-    transform
+
     transition-all
     duration-500
     ease-out
+
+    hover:bg-white/10
     hover:scale-[1.05]
-    hover:shadow-2xl
+    hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+    hover:border-white/30
+
     will-change-transform
   "
             >
