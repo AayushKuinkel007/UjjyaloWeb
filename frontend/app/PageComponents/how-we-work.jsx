@@ -1,4 +1,4 @@
-import Timeline from '../components/Timeline/Timeline';
+import Timeline from '../Components/Timeline/Timeline';
 
 export default function HowWeWorkPage() {
   return (

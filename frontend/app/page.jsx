@@ -8,6 +8,7 @@ import Services from "./PageComponents/Services";
 import FAQs from "./PageComponents/FAQs";
 import Footer from "./Components/Footer";
 import Contacts from "./PageComponents/Contacts";
+import Process from "./PageComponents/how-we-work";
 
 const page = () => {
   return (
@@ -18,6 +19,7 @@ const page = () => {
         <Hero />
         <Services />
         <ProjectsGrid />
+        <Process />
         <Contacts/>
       </main>
 
