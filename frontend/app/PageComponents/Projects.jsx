@@ -103,7 +103,7 @@ const ProjectCard = ({ project }) => {
 export default function ProjectsGrid() {
   return (
     <section
-      id="portfolio"
+      id="projects"
       className="h-screen w-full flex flex-col overflow-hidden mb-10 p-8 md:p-12"
     >
       {/* Our Projects Header */}

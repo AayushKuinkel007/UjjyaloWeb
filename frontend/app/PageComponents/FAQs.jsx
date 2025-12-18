@@ -53,11 +53,11 @@ const FAQs = () => {
   ];
 
   return (
-    <section className="w-full py-12 md:py-16 px-4">
+    <section id="faq" className="w-full py-12 md:py-16 px-4">
       {/* Title */}
-      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 md:mb-12 text-center">
+      {/* <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 md:mb-12 text-center">
         FAQ's
-      </h2>
+      </h2> */}
 
       {/* FAQ LIST */}
       <div className="max-w-4xl mx-auto space-y-4 md:space-y-5">
@@ -70,7 +70,7 @@ const FAQs = () => {
               onClick={() => toggleFAQ(i)}
               className={`
                 cursor-pointer
-                bg-[#0f0f0f]
+                bg-[#000000]/50
                 border border-[#2a2a2a]
                 rounded-2xl
                 p-5 md:p-6 lg:p-7
