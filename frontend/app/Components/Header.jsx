@@ -29,10 +29,10 @@ const Header = () => {
     <header
       className={`fixed top-0 z-50 text-white px-4 sm:px-6 lg:px-0 ${
         isOpen
-          ? "bg-[#0c2342] py-4 shadow-none w-full"
+          ? "backdrop-blur-md bg-white/10 border border-white/20 shadow-lg py-4 shadow-none w-full"
           : scrolled
           ? "backdrop-blur-md bg-white/10 border border-white/20 shadow-lg w-[95%] lg:w-[700px] lg:left-1/2 lg:-translate-x-1/2 lg:rounded-[20px] mt-4 mx-2.5 rounded-[20px]"
-          : "bg-[#0c2342] lg:bg-transparent lg:py-1 w-[95%] lg:w-full ms-2.5 mt-2 rounded-[20px]"
+          : "backdrop-blur-md bg-white/10 border border-white/20 shadow-lg lg:py-1 w-[95%] lg:w-full ms-2.5 mt-2 rounded-[20px]"
       }`}
     >
       <div className={`mx-auto max-w-7xl flex items-center justify-between ${
@@ -91,7 +91,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden fixed top-[72px] left-0 w-full z-40 bg-[#0c2342]/95 rounded-b-2xl backdrop-blur-md px-6 py-6 flex flex-col gap-4">
+        <div className="md:hidden fixed top-[72px] left-0 w-full z-40 backdrop-blur-md bg-white/10 border border-white/20 shadow-lg px-6 py-6 flex flex-col gap-4">
           {navItems.map((item) => (
             <button
               key={item.name}
