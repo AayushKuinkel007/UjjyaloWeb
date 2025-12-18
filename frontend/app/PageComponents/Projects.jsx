@@ -1,37 +1,37 @@
 "use client";
 
-import React, { useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import React, { useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: 'Nangsal Cafe & Stay',
-    image: '/projects/nangsal.png',
-    link: 'https://cafe-nine-sandy.vercel.app/?fbclid=PAVERFWAOrNQRleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafOVqQ89q3E87eDdl_5TCtSYg2A99o_l-IuSlczkRkRxmq9I87-xbF8V4xD5g_aem_lbJuuHPqSAgnHGO4TXzXsw',
-    flex: 'flex-[1.4]' 
+    title: "Nangsal Cafe & Stay",
+    image: "/projects/nangsal.png",
+    link: "https://cafe-nine-sandy.vercel.app/?fbclid=PAVERFWAOrNQRleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafOVqQ89q3E87eDdl_5TCtSYg2A99o_l-IuSlczkRkRxmq9I87-xbF8V4xD5g_aem_lbJuuHPqSAgnHGO4TXzXsw",
+    flex: "flex-[1.4]",
   },
   {
     id: 2,
-    title: 'How to Order',
-    image: '/projects/howtoorder.png',
-    link: 'https://www.onlinebajaar.com/',
-    flex: 'flex-[0.6]'
+    title: "How to Order",
+    image: "/projects/howtoorder.png",
+    link: "https://www.onlinebajaar.com/",
+    flex: "flex-[0.6]",
   },
   {
     id: 3,
-    title: 'Ready to Expand',
-    image: '/projects/onlinebajaarfooter.png',
-    link: 'https://cafe-nine-sandy.vercel.app/?fbclid=PAVERFWAOrNQRleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafOVqQ89q3E87eDdl_5TCtSYg2A99o_l-IuSlczkRkRxmq9I87-xbF8V4xD5g_aem_lbJuuHPqSAgnHGO4TXzXsw',
-    flex: 'flex-[0.6]'
+    title: "Ready to Expand",
+    image: "/projects/onlinebajaarfooter.png",
+    link: "https://cafe-nine-sandy.vercel.app/?fbclid=PAVERFWAOrNQRleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafOVqQ89q3E87eDdl_5TCtSYg2A99o_l-IuSlczkRkRxmq9I87-xbF8V4xD5g_aem_lbJuuHPqSAgnHGO4TXzXsw",
+    flex: "flex-[0.6]",
   },
   {
     id: 4,
-    title: 'OnlineBajaar',
-    image: '/projects/onlinebajaar.png',
-    link: 'https://www.onlinebajaar.com/',
-    flex: 'flex-[1.4]'
-  }
+    title: "OnlineBajaar",
+    image: "/projects/onlinebajaar.png",
+    link: "https://www.onlinebajaar.com/",
+    flex: "flex-[1.4]",
+  },
 ];
 
 const ProjectCard = ({ project }) => {
@@ -42,7 +42,7 @@ const ProjectCard = ({ project }) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePosition({
       x: e.clientX - rect.left,
-      y: e.clientY - rect.top
+      y: e.clientY - rect.top,
     });
   };
 
@@ -79,8 +79,8 @@ const ProjectCard = ({ project }) => {
             style={{
               left: `${mousePosition.x}px`,
               top: `${mousePosition.y}px`,
-              transform: 'translate(-50%, -50%)',
-              transition: 'left 0.1s ease-out, top 0.1s ease-out'
+              transform: "translate(-50%, -50%)",
+              transition: "left 0.1s ease-out, top 0.1s ease-out",
             }}
           >
             <div className="px-10 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-semibold rounded-2xl shadow-2xl whitespace-nowrap">
@@ -102,18 +102,23 @@ const ProjectCard = ({ project }) => {
 
 export default function ProjectsGrid() {
   return (
-    <section id='portfolio' className="h-screen w-full bg-[#030303] flex flex-col overflow-hidden p-8 md:p-12">
-      
+    <section
+      id="portfolio"
+      className="h-screen w-full bg-[#030303] flex flex-col overflow-hidden p-8 md:p-12"
+    >
       {/* Our Projects Header */}
       <div className="flex justify-center mb-10">
-        <span className="px-8 py-3 bg-[#1a1c2e] border border-white/10 rounded-full text-white text-xs tracking-widest uppercase font-bold">
+        <span
+          className="px-8 py-3     bg-white/10
+    backdrop-blur-xl
+    border border-white/20 rounded-full text-white text-xs tracking-widest uppercase font-bold"
+        >
           Our Projects
         </span>
       </div>
 
       {/* Bento Grid: Controlled by flexbox to fit one screen */}
       <div className="flex-1 flex gap-8 min-h-0">
-        
         {/* Left Column */}
         <div className="w-1/2 flex flex-col gap-8">
           <ProjectCard project={projects[0]} />
@@ -125,7 +130,6 @@ export default function ProjectsGrid() {
           <ProjectCard project={projects[1]} />
           <ProjectCard project={projects[3]} />
         </div>
-
       </div>
     </section>
   );
