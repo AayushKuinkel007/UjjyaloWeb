@@ -135,7 +135,7 @@ const Contacts = () => {
 
           <div>
             <div
-              className="flex-1 h-[81.8%] px-8 py-6 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 overflow-y-auto scrollbar-thin"
+              className="flex-1 h-[86.8%] px-8 py-6 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 overflow-y-auto scrollbar-thin"
               onClick={(e) => e.stopPropagation()}
               style={{
                 scrollbarWidth: "thin",
