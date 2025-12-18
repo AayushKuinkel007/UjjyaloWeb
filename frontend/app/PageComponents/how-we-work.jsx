@@ -4,7 +4,7 @@ export default function HowWeWorkPage() {
   return (
     <>
       <section id="process">
-        <div className="min-h-screen bg-black">
+        <div className="min-h-screen">
           {/* Page Header */}
           <div className="container mx-auto px-4 py-16 md:py-24">
             <h1 className="text-4xl md:text-6xl font-bold text-white text-center mb-4">

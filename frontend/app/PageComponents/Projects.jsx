@@ -104,7 +104,7 @@ export default function ProjectsGrid() {
   return (
     <section
       id="portfolio"
-      className="h-screen w-full bg-[#030303] flex flex-col overflow-hidden mb-10 p-8 md:p-12"
+      className="h-screen w-full flex flex-col overflow-hidden mb-10 p-8 md:p-12"
     >
       {/* Our Projects Header */}
       <div className="flex justify-center mb-10">

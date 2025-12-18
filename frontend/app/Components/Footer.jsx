@@ -17,7 +17,7 @@ const Footer = () => {
 
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4 lg:ms-20">
+            <div className="flex items-center gap-2 mb-4 ms-8 md:ms-0 lg:ms-20">
               <img src={logo.src} alt="UjjyaloWeb Logo" className="h-10 scale-500 w-auto" />
             </div>
 
@@ -35,13 +35,13 @@ const Footer = () => {
 
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex gap-4">
-              <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-orange-500 hover:text-orange-500">
+              <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
                 <Instagram size={20} />
               </a>
-              <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-orange-500 hover:text-orange-500">
+              <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
                 <Twitter size={20} />
               </a>
-              <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-orange-500 hover:text-orange-500">
+              <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
                 <Linkedin size={20} />
               </a>
             </div>
