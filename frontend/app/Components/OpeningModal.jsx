@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import logo from "../Assets/logo.png"
+import logo from "../Assets/logo.png";
 const OpeningModal = () => {
   const [open, setOpen] = useState(false);
+  const [pricingOpen, setPricingOpen] = useState(false);
 
   useEffect(() => {
     setOpen(true);
@@ -12,19 +13,31 @@ const OpeningModal = () => {
     setOpen(false);
   };
 
+  const handlepricingOpen = () => {
+    setPricingOpen(true);
+  };
+    const handlepricingClose = () => {
+    setPricingOpen(false);
+  };
   return (
     <>
       {open && (
         <>
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4"
-            onClick={handleClose}
-          >
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
             <div className="relative px-[50px] py-[50px] rounded-2xl bg-[#0c2342] backdrop-blur-xl">
               <div>
-                <button className="absolute top-2 right-5 py-2 px-3 bg-[#454443] rounded-xl hover:bg-[#454443]/60" onClick={handleClose}>X</button>
+                <button
+                  className="absolute top-2 right-5 py-2 px-3 bg-[#454443] rounded-xl hover:bg-[#454443]/60"
+                  onClick={handleClose}
+                >
+                  X
+                </button>
               </div>
-              <img src={logo.src} alt="logo" className="h-40 w-40 absolute top-[-35px] lg:left-55 left-35 z-10"/>
+              <img
+                src={logo.src}
+                alt="logo"
+                className="h-40 w-40 absolute top-[-35px] lg:left-55 left-35 z-10"
+              />
               {/* Modal Card */}
               <motion.div
                 className="relative w-full max-w-xl rounded-2xl p-8 text-white border border-white/20 shadow-2xl"
@@ -89,7 +102,14 @@ const OpeningModal = () => {
                       Claim Your Spot
                     </button>
                   </div>
-                  <p className="text-center text-xs underline mt-2">see pricing options</p>
+                  <div className="flex justify-center">
+                    <button
+                      className="text-center text-xs underline mt-2"
+                      onClick={handlepricingOpen}
+                    >
+                      see pricing options
+                    </button>
+                  </div>
                 </div>
                 {/* Footer */}
                 <div className="relative flex flex-wrap justify-between text-xs text-white/70">
@@ -100,6 +120,27 @@ const OpeningModal = () => {
               </motion.div>
             </div>
           </div>
+
+          {pricingOpen && (
+            <div
+              className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 backdrop-blur-sm px-4"
+            >
+              <div
+                className="relative px-[50px] py-[50px] rounded-2xl bg-[#0c2342] backdrop-blur-xl text-white"
+                onClick={(e) => e.stopPropagation()}
+              >
+                              <div>
+                <button
+                  className="absolute top-2 right-5 py-2 px-3 bg-[#454443] rounded-xl hover:bg-[#454443]/60"
+                  onClick={handlepricingClose}
+                >
+                  X
+                </button>
+              </div>
+                <h1>This is pricing Modal</h1>
+              </div>
+            </div>
+          )}
         </>
       )}
     </>

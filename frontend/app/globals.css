@@ -1,5 +1,9 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+/* @import "tw-animate-css"; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -107,6 +111,13 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Timeline-specific HSL colors */
+  --timeline-primary: 30 91% 55%; /* Orange */
+  --timeline-background: 0 0% 0%; /* Black */
+  --timeline-foreground: 0 0% 100%; /* White */
+  --timeline-muted: 0 0% 15%;
+  --timeline-muted-foreground: 0 0% 65%;
 }
 
 .dark {
@@ -149,5 +160,55 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Timeline-specific utility classes */
+@layer utilities {
+  .bg-timeline-primary {
+    background-color: hsl(var(--timeline-primary));
+  }
+  
+  .text-timeline-primary {
+    color: hsl(var(--timeline-primary));
+  }
+  
+  .text-timeline-primary\/80 {
+    color: hsl(var(--timeline-primary) / 0.8);
+  }
+  
+  .text-timeline-primary\/70 {
+    color: hsl(var(--timeline-primary) / 0.7);
+  }
+  
+  .text-timeline-foreground {
+    color: hsl(var(--timeline-foreground));
+  }
+  
+  .text-timeline-foreground\/90 {
+    color: hsl(var(--timeline-foreground) / 0.9);
+  }
+  
+  .text-timeline-muted-foreground {
+    color: hsl(var(--timeline-muted-foreground));
+  }
+  
+  .bg-timeline-background {
+    background-color: hsl(var(--timeline-background));
+  }
+  
+  .from-timeline-primary\/20 {
+    --tw-gradient-from: hsl(var(--timeline-primary) / 0.2) var(--tw-gradient-from-position);
+    --tw-gradient-to: hsl(var(--timeline-primary) / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+  
+  .via-timeline-primary {
+    --tw-gradient-to: hsl(var(--timeline-primary) / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), hsl(var(--timeline-primary)) var(--tw-gradient-via-position), var(--tw-gradient-to);
+  }
+  
+  .to-timeline-primary\/20 {
+    --tw-gradient-to: hsl(var(--timeline-primary) / 0.2) var(--tw-gradient-to-position);
   }
 }

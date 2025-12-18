@@ -88,7 +88,7 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 relative">
+    <section id="services" className="mb-10 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -98,7 +98,7 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-8 py-3 bg-[#1a1c2e] border border-white/10 font-bold uppercase text-white text-xs rounded-full mb-4">
+          <span className="inline-block px-8 py-3 bg-[#1a1a1a]/40 border border-white/10 font-bold uppercase text-white text-xs rounded-full mb-4">
             Our Services
           </span>
           <h2 className="text-[60px] font-bold mb-2">
@@ -123,17 +123,23 @@ const Services = () => {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className="
     group
-    bg-[#1a1c2e]
+    relative
+    bg-[#1a1a1a]/40
+    backdrop-blur-xl
     border border-white/20
-    p-6
     rounded-xl
+    p-6
     flex flex-col gap-4
-    transform
+
     transition-all
     duration-500
     ease-out
+
+    hover:bg-white/10
     hover:scale-[1.05]
-    hover:shadow-2xl
+    hover:shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+    hover:border-white/30
+
     will-change-transform
   "
             >
