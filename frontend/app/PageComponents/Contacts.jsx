@@ -91,7 +91,7 @@ const Contacts = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen py-16 px-4">
+    <section id="contact" className="min-h-screen py-1 px-4">
       {/* Header */}
       <div className="mb-16 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-bold text-center text-white mb-4">
