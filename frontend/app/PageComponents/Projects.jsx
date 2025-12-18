@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const projects = [
@@ -35,12 +35,34 @@ const projects = [
 ];
 
 const ProjectCard = ({ project }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    });
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <a
       href={project.link}
       target="_blank"
       rel="noopener noreferrer"
       className={`relative group w-full ${project.flex} rounded-[2.5rem] overflow-hidden bg-[#121421] border border-white/10 block cursor-pointer transition-colors duration-300 hover:border-white/25`}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {/* Background Image */}
       <img
@@ -49,12 +71,24 @@ const ProjectCard = ({ project }) => {
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
 
-      {/* Instant Hover Button */}
-      <div className="absolute inset-0 bg-black/40 hidden group-hover:flex items-center justify-center z-20">
-        <div className="px-10 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-semibold rounded-2xl shadow-2xl">
-          View Project
+      {/* Button Following Cursor */}
+      {isHovered && (
+        <div className="absolute inset-0 bg-black/40 z-20 pointer-events-none">
+          <div
+            className="absolute pointer-events-auto"
+            style={{
+              left: `${mousePosition.x}px`,
+              top: `${mousePosition.y}px`,
+              transform: 'translate(-50%, -50%)',
+              transition: 'left 0.1s ease-out, top 0.1s ease-out'
+            }}
+          >
+            <div className="px-10 py-4 bg-white/10 backdrop-blur-xl border border-white/20 text-white font-semibold rounded-2xl shadow-2xl whitespace-nowrap">
+              View Project
+            </div>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Bottom Left Arrow Icon */}
       <div className="absolute bottom-8 left-8 z-10">
