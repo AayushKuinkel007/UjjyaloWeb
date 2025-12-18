@@ -8,7 +8,6 @@ const navItems = [
   { name: "Services", href: "#services" },
   { name: "Portfolio", href: "#portfolio" },
   { name: "Testimonials", href: "#testimonial" },
-
 ];
 
 const Header = () => {
@@ -32,13 +31,13 @@ const Header = () => {
         isOpen
           ? "bg-[#0c2342] py-4 shadow-none w-full"
           : scrolled
-          ? "backdrop-blur-md bg-[#0c2342] shadow-lg w-[95%] lg:w-[700px] lg:left-1/2 lg:-translate-x-1/2 lg:rounded-[20px] mt-2 mx-2.5 rounded-[20px]"
+          ? "backdrop-blur-md bg-white/10 border border-white/20 shadow-lg w-[95%] lg:w-[700px] lg:left-1/2 lg:-translate-x-1/2 lg:rounded-[20px] mt-4 mx-2.5 rounded-[20px]"
           : "bg-[#0c2342] lg:bg-transparent lg:py-1 w-[95%] lg:w-full ms-2.5 mt-2 rounded-[20px]"
       }`}
     >
       <div className={`mx-auto max-w-7xl flex items-center justify-between ${
         scrolled
-        ? "lg:jusitfy-evenly"
+        ? "lg:justify-between"
         : "lg:justify-evenly"
       }`}>
         {/* Logo */}
