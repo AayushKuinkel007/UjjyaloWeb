@@ -98,7 +98,7 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-8 py-3 bg-[#1a1c2e] border border-white/10 font-bold uppercase text-white text-xs rounded-full mb-4">
+          <span className="inline-block px-8 py-3 bg-[#1a1a1a]/40 border border-white/10 font-bold uppercase text-white text-xs rounded-full mb-4">
             Our Services
           </span>
           <h2 className="text-[60px] font-bold mb-2">
@@ -124,7 +124,7 @@ const Services = () => {
               className="
     group
     relative
-    bg-white/10
+    bg-[#1a1a1a]/40
     backdrop-blur-xl
     border border-white/20
     rounded-xl
