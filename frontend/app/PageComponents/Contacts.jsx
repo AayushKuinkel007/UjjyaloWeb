@@ -98,7 +98,7 @@ const Contacts = () => {
           Let's Illuminate Your Next Project
         </h1>
         <p className="text-gray-400 text-lg md:text-xl text-center">
-          Tell us a bit about what you're building — we'll take it from there.
+          Tell us a bit about what you're building & we'll take it from there.
         </p>
       </div>
 
@@ -265,14 +265,14 @@ const Contacts = () => {
             <ArrowRight size={20} weight="bold" />
           </button>
 
-          <p className="text-center text-gray-400 text-sm mt-6 mb-6">
+          <p className="text-center text-gray-400 text-sm mt-6 mb-4">
             We usually respond within 24 hours.
           </p>
 
-          <hr className="border-[#2a2a2a] mb-6" />
+          <hr className="border-[#2a2a2a] mb-3" />
 
           <p className="text-center text-gray-400 text-sm flex justify-center items-center gap-2">
-            <Lock size={16} weight="regular" />
+            <Lock size={14} weight="regular" />
             Your information is safe and will never be shared.
           </p>
         </div>
