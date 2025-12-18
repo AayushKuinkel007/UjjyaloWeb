@@ -32,7 +32,7 @@ const Header = () => {
           ? "backdrop-blur-md bg-white/10 border border-white/20 shadow-lg py-4 shadow-none w-full"
           : scrolled
           ? "backdrop-blur-md bg-white/10 border border-white/20 shadow-lg w-[95%] lg:w-[700px] lg:left-1/2 lg:-translate-x-1/2 lg:rounded-[20px] mt-4 mx-2.5 rounded-[20px]"
-          : "backdrop-blur-md bg-white/10 border border-white/20 shadow-lg lg:py-1 w-[95%] lg:w-full ms-2.5 mt-2 rounded-[20px]"
+          : "backdrop-blur-md bg-white/10 border border-white/20 shadow-lg lg:bg-transparent lg:py-1 lg:border-none lg:shadow-none w-[95%] lg:w-full ms-2.5 mt-2 rounded-[20px]"
       }`}
     >
       <div className={`mx-auto max-w-7xl flex items-center justify-between ${
@@ -91,7 +91,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden fixed top-[72px] left-0 w-full z-40 backdrop-blur-md bg-white/10 border border-white/20 shadow-lg px-6 py-6 flex flex-col gap-4">
+        <div className="md:hidden fixed top-[72px] left-0 w-full z-40 backdrop-blur-md bg-white/10 border border-white/20 shadow-lg rounded-b-2xl px-6 py-6 flex flex-col gap-4">
           {navItems.map((item) => (
             <button
               key={item.name}
