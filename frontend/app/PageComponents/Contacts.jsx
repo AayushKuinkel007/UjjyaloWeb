@@ -1,4 +1,11 @@
-import { ArrowRight, Clock, Envelope, Lock, Phone } from "phosphor-react";
+import {
+  ArrowRight,
+  Clock,
+  Envelope,
+  Lock,
+  Phone,
+  Check,
+} from "phosphor-react";
 import React, { useState } from "react";
 import FAQs from "./FAQs";
 
@@ -19,32 +26,39 @@ const contactCards = [
   },
   {
     title: "Response Time",
-    value: "24h",
+    value: "<24h",
     desc: "Quick turnaround guaranteed",
     icon: Clock,
   },
 ];
 
+const whyWorkWithUs = [
+  "Dedicated project manager for every client",
+  "Transparent pricing with no hidden fees",
+  "Unlimited revisions until you're satisfied",
+  "Post-launch support included",
+];
+
 const inputFields = [
   {
-    label: "Name",
+    label: "Full Name",
     id: "name",
     type: "text",
-    placeholder: "John Doe",
+    placeholder: "e.g. Alex Johnson",
     required: true,
   },
   {
     label: "Work Email",
     id: "email",
-    type: "text",
-    placeholder: "johndoe@example.com",
+    type: "email",
+    placeholder: "e.g. alex@company.com",
     required: true,
   },
   {
-    label: "Company/Brand Name",
+    label: "Company / Brand Name",
     id: "company",
     type: "text",
-    placeholder: "Your company",
+    placeholder: "Your company or brand (if applicable)",
     optional: true,
   },
 ];
@@ -59,109 +73,127 @@ const services = [
 ];
 
 const budgets = [
-  "Under $1000",
-  "$1000-$3000",
-  "$3000-$7000",
-  "$7000+",
+  "Under $1,000",
+  "$1,000 – $3,000",
+  "$3,000 – $7,000",
+  "$7,000+",
   "Not sure yet",
 ];
 
 const timelines = ["ASAP", "2-4 weeks", "1-3 months", "Flexible"];
 
 const Contacts = () => {
-  const [open, setOpen] = useState(false);
+  const [selectedServices, setSelectedServices] = useState([]);
+  const [selectedBudget, setSelectedBudget] = useState("");
+  const [selectedTimeline, setSelectedTimeline] = useState("");
+  const [isReady, setIsReady] = useState(false);
 
-  const handleClose = () => setOpen(false);
+  const toggleService = (service) => {
+    setSelectedServices((prev) =>
+      prev.includes(service)
+        ? prev.filter((s) => s !== service)
+        : [...prev, service]
+    );
+  };
+
   return (
-    <section id="contact" className="mb-10">
+    <section id="contact" className="min-h-screen py-16 px-4">
       {/* Header */}
-      <div className="mb-10">
-        <h1 className="text-[60px] font-bold text-center">
+      <div className="mb-16 max-w-4xl mx-auto">
+        <h1 className="text-5xl md:text-6xl font-bold text-center text-white mb-4">
           Let's Illuminate Your Next Project
         </h1>
-        <p className="text-gray-500 text-[20px] text-center w-full mx-auto">
+        <p className="text-gray-400 text-lg md:text-xl text-center">
           Tell us a bit about what you're building — we'll take it from there.
         </p>
       </div>
 
-      <div className="flex justify-between gap-10 px-[200px]">
-        {/* Left Cards */}
-        <div className="flex flex-col gap-4 w-90 max-h-[1370px]">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6">
+        {/* Left Sidebar */}
+        <div className="w-full lg:w-80 flex flex-col gap-4">
+          {/* Contact Cards */}
           {contactCards.map(({ title, value, desc, icon: Icon }, i) => (
             <div
               key={i}
-              className="group rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 py-4 px-6 hover:border-[#f48c25]"
+              className="group rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] p-5 hover:border-[#f48c25] transition-all duration-300"
             >
-              <div className="flex items-start gap-8">
-                <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-white/5 group-hover:bg-[#f48c25]/10">
+              <div className="flex items-start gap-4">
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-[#252525] group-hover:bg-[#f48c25]/10 transition-colors duration-300">
                   <Icon
-                    size={24}
-                    className="text-white group-hover:text-[#f48c25]"
+                    size={22}
+                    weight="regular"
+                    className="text-gray-400 group-hover:text-[#f48c25] transition-colors duration-300"
                   />
                 </div>
 
-                <div className="flex flex-col">
-                  <h1 className="text-white text-xl font-semibold">{title}</h1>
-                  <p className="text-white/75 text-base">{value}</p>
-                  <span className="text-white/50 text-sm mt-1">{desc}</span>
+                <div className="flex-1">
+                  <h3 className="text-white text-sm font-semibold mb-1">
+                    {title}
+                  </h3>
+                  <p className="text-white text-base font-medium mb-0.5">
+                    {value}
+                  </p>
+                  <span className="text-gray-500 text-xs">{desc}</span>
                 </div>
               </div>
             </div>
           ))}
 
-          {/* FAQ SCROLL AREA */}
-          <div
-            className="flex-1 px-8 py-6 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 overflow-y-auto scrollbar-thin"
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              scrollbarWidth: "thin",
-              scrollbarColor: "#454443 transparent",
-            }}
-          >
-            <FAQs />
+          <div>
+            <div
+              className="flex-1 h-[81.8%] px-8 py-6 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 overflow-y-auto scrollbar-thin"
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                scrollbarWidth: "thin",
+                scrollbarColor: "#454443 transparent",
+              }}
+            >
+              <FAQs />
+            </div>
+            <style jsx>{`
+              div::-webkit-scrollbar {
+                width: 6px;
+                height: 6px;
+              }
+              div::-webkit-scrollbar-track {
+                background: transparent;
+              }
+              div::-webkit-scrollbar-thumb {
+                background-color: rgba(218, 165, 32, 0.5);
+                border-radius: 9999px;
+              }
+              div::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(218, 165, 32, 0.7);
+              }
+              div::-ms-scrollbar-button {
+                display: none;
+              }
+            `}</style>
           </div>
-          <style jsx>{`
-            div::-webkit-scrollbar {
-              width: 6px;
-              height: 6px;
-            }
-            div::-webkit-scrollbar-track {
-              background: transparent;
-            }
-            div::-webkit-scrollbar-thumb {
-              background-color: rgba(218, 165, 32, 0.5);
-              border-radius: 9999px;
-            }
-            div::-webkit-scrollbar-thumb:hover {
-              background-color: rgba(218, 165, 32, 0.7);
-            }
-            div::-ms-scrollbar-button {
-              display: none;
-            }
-          `}</style>
         </div>
 
         {/* Form */}
-        <div className="rounded-2xl w-full max-w-3xl bg-white/10 backdrop-blur-xl border border-white/20 p-6 ">
-          {/* Inputs */}
+        <div className="flex-1 h-[90%] rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] p-8">
+          {/* Input Fields */}
           {inputFields.map(
             ({ label, id, type, placeholder, required, optional }) => (
-              <div key={id} className="flex flex-col mb-4">
-                <div className="mb-2">
-                  <label htmlFor={id} className="label-form">
-                    {label}
-                  </label>
-                  {required && <span className="ms-1 text-red-500">*</span>}
+              <div key={id} className="mb-6">
+                <label
+                  htmlFor={id}
+                  className="block text-white text-sm font-medium mb-2"
+                >
+                  {label}
+                  {required && <span className="text-[#f48c25] ml-1">*</span>}
                   {optional && (
-                    <span className="ms-1 text-gray-700 text-xs">
+                    <span className="text-gray-500 text-xs ml-2">
                       (optional)
                     </span>
                   )}
-                </div>
+                </label>
                 <input
                   type={type}
                   id={id}
-                  className="w-full border border-white/20 rounded-lg p-3 bg-transparent text-white outline-none focus:border-[#f48c25] focus:ring-1 focus:ring-[#f48c25]/40 focus:shadow-[0_0_20px_#f48c25]"
+                  className="w-full border border-[#2a2a2a] rounded-lg px-4 py-3 bg-[#0f0f0f] text-white placeholder:text-gray-600 outline-none focus:border-[#f48c25] focus:ring-1 focus:ring-[#f48c25]/20 transition-all duration-200"
                   placeholder={placeholder}
                 />
               </div>
@@ -173,7 +205,10 @@ const Contacts = () => {
             label="What service are you looking for?"
             items={services}
             helper="You can select more than one."
-            cols="md:grid-cols-2"
+            cols="grid-cols-2"
+            selected={selectedServices}
+            onToggle={toggleService}
+            multiple
           />
 
           {/* Budget */}
@@ -181,56 +216,69 @@ const Contacts = () => {
             label="Project Budget"
             items={budgets}
             helper="This helps us suggest the best approach for your project."
-            cols="md:grid-cols-3"
+            cols="grid-cols-3"
+            selected={selectedBudget}
+            onToggle={setSelectedBudget}
           />
 
           {/* Timeline */}
           <FormOptions
             label="Project Timeline"
             items={timelines}
-            cols="md:grid-cols-4"
+            cols="grid-cols-4"
+            selected={selectedTimeline}
+            onToggle={setSelectedTimeline}
           />
 
           {/* Message */}
-          <div className="flex flex-col mb-6">
-            <label className="mb-3 text-white font-medium">
-              Tell us About your project
-              <span className="ml-1 text-[#f48c25]">*</span>
+          <div className="mb-6">
+            <label className="block text-white text-sm font-medium mb-2">
+              Tell us about your project
+              <span className="text-[#f48c25] ml-1">*</span>
             </label>
             <textarea
-              rows={4}
-              className="w-full resize-none rounded-xl border border-white/15 p-4 text-white placeholder:text-white/40 outline-none transition-all duration-200 focus:border-[#f48c25] focus:ring-1 focus:ring-[#f48c25]/40 focus:shadow-[0_0_25px_#f48c25]/20"
-              placeholder="Tell us about your project..."
+              rows={5}
+              className="w-full resize-none rounded-lg border border-[#2a2a2a] px-4 py-3 bg-[#0f0f0f] text-white placeholder:text-gray-600 outline-none focus:border-[#f48c25] focus:ring-1 focus:ring-[#f48c25]/20 transition-all duration-200"
+              placeholder="What are you building?
+What problem are you trying to solve?
+Who is it for?"
             />
           </div>
 
-          {/* Radio */}
-          <label className="flex items-center gap-4 cursor-pointer select-none">
-            <input type="radio" className="peer sr-only" defaultChecked />
-            <div className="w-5 h-5 rounded-full border border-white/30 flex items-center justify-center peer-checked:border-[#f48c25]">
-              <div className="w-3 h-3 rounded-full bg-[#f48c25] scale-0 peer-checked:scale-100 transition-transform duration-200" />
+          {/* Ready Checkbox */}
+          <label className="flex items-center gap-3 cursor-pointer mb-6 group">
+            <div className="relative">
+              <input
+                type="checkbox"
+                className="sr-only peer"
+                checked={isReady}
+                onChange={(e) => setIsReady(e.target.checked)}
+              />
+              <div className="w-5 h-5 rounded border-2 border-[#2a2a2a] bg-[#0f0f0f] peer-checked:border-[#f48c25] peer-checked:bg-[#f48c25] transition-all duration-200 flex items-center justify-center">
+                {isReady && (
+                  <Check size={14} weight="bold" className="text-black" />
+                )}
+              </div>
             </div>
-            <span className="text-white text-sm">
+            <span className="text-gray-300 text-sm">
               I'm ready to start within the next 30 days
             </span>
           </label>
 
-          {/* Submit */}
-          <div className="w-full mt-5 mb-5">
-            <button className="relative flex justify-center items-center gap-2 p-3 rounded-xl text-black bg-[#f48c25] hover:shadow-[0_0_20px_#f48c25] hover:scale-105 duration-500 w-full">
-              Illuminate My Project
-              <ArrowRight size={22} weight="bold" />
-            </button>
-          </div>
+          {/* Submit Button */}
+          <button className="w-full flex justify-center items-center gap-2 px-6 py-4 rounded-lg text-black font-semibold bg-[#f48c25] hover:bg-[#ff9933] hover:shadow-[0_0_30px_rgba(244,140,37,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+            Illuminate My Project
+            <ArrowRight size={20} weight="bold" />
+          </button>
 
-          <p className="text-center text-gray-300 mb-5">
-            we usually respond within 24 hours.
+          <p className="text-center text-gray-400 text-sm mt-6 mb-6">
+            We usually respond within 24 hours.
           </p>
 
-          <hr className="mb-5" />
+          <hr className="border-[#2a2a2a] mb-6" />
 
-          <p className="text-center text-gray-300 flex justify-center items-center gap-2">
-            <Lock size={15} />
+          <p className="text-center text-gray-400 text-sm flex justify-center items-center gap-2">
+            <Lock size={16} weight="regular" />
             Your information is safe and will never be shared.
           </p>
         </div>
@@ -241,26 +289,45 @@ const Contacts = () => {
 
 /* -------------------- REUSABLE OPTIONS -------------------- */
 
-const FormOptions = ({ label, items, helper, cols }) => (
-  <div className="flex flex-col mb-6">
-    <label className="mb-3 text-white font-medium">
+const FormOptions = ({
+  label,
+  items,
+  helper,
+  cols,
+  selected,
+  onToggle,
+  multiple = false,
+}) => (
+  <div className="mb-6">
+    <label className="block text-white text-sm font-medium mb-3">
       {label}
-      <span className="ml-1 text-[#f48c25]">*</span>
+      <span className="text-[#f48c25] ml-1">*</span>
     </label>
 
-    <div className={`grid grid-cols-1 ${cols} gap-4`}>
-      {items.map((item, i) => (
-        <button
-          key={i}
-          type="button"
-          className="group w-full rounded-xl border border-white/15 px-6 py-4 text-left text-white font-medium transition-all duration-200 hover:border-[#f48c25] hover:bg-[#f48c25]/10 focus:border-[#f48c25] focus:outline-none"
-        >
-          {item}
-        </button>
-      ))}
+    <div className={`grid ${cols} gap-3`}>
+      {items.map((item, i) => {
+        const isSelected = multiple
+          ? selected.includes(item)
+          : selected === item;
+
+        return (
+          <button
+            key={i}
+            type="button"
+            onClick={() => onToggle(item)}
+            className={`rounded-lg border px-4 py-3 text-sm font-medium text-left transition-all duration-200 ${
+              isSelected
+                ? "border-[#f48c25] bg-[#f48c25]/10 text-white"
+                : "border-[#2a2a2a] bg-[#0f0f0f] text-gray-300 hover:border-[#3a3a3a] hover:bg-[#1a1a1a]"
+            }`}
+          >
+            {item}
+          </button>
+        );
+      })}
     </div>
 
-    {helper && <p className="mt-3 text-sm text-white/50">{helper}</p>}
+    {helper && <p className="mt-3 text-xs text-gray-500">{helper}</p>}
   </div>
 );
 
