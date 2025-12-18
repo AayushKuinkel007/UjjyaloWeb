@@ -22,31 +22,31 @@ const FAQs = () => {
               q: "Do you build custom websites or use pre-made templates?",
               a: "We build 100% custom websites. Every design and development decision is made specifically for your brand, audience, and requirements. We do not rely on generic templates.",
             },
-                        {
+            {
               q: "Are your websites mobile-friendly and responsive?",
               a: "Yes. All our websites are fully responsive and mobile-first, ensuring smooth performance and consistent design across desktops, tablets, and smartphones.",
             },
-                        {
+            {
               q: "Can you redesign an existing website?",
               a: "Yes. We offer website redesign services to improve visual design, usability, performance, and SEO. We can modernize outdated websites while preserving important content and brand identity.",
             },
-                        {
+            {
               q: "Is SEO included in your website development process?",
               a: "Yes. Our websites follow SEO best practices, including clean code, fast loading speed, optimized structure, and Core Web Vitals compliance. Advanced SEO strategies can be added if required.",
             },
-                        {
+            {
               q: "Will my website be fast and secure?",
               a: "Absolutely. We prioritize website speed, performance, and security by using modern frameworks, optimized assets, and secure deployment practices to ensure reliable performance.",
             },
-                        {
+            {
               q: "Will I be able to update content on my website?",
               a: "Yes. We can integrate a content management system (CMS) or provide a simple setup that allows you to update text, images, and content without technical knowledge.",
             },
-                        {
+            {
               q: "Do you offer support and maintenance after launch?",
               a: "Yes. We provide post-launch website support and maintenance, including updates, performance monitoring, bug fixes, and security checks..",
             },
-                        {
+            {
               q: "How can I get started with your web design services?",
               a: "You can get started by contacting us through our website. We’ll discuss your project requirements, goals, and timeline, then provide a clear plan and next steps.",
             },
@@ -78,14 +78,13 @@ const FAQs = () => {
             >
               <summary className="flex cursor-pointer list-none items-center justify-between text-lg font-semibold text-white">
                 {item.q}
-                <span
-                  className="
-              text-2xl font-bold
-              group-open:rotate-45
-              group-open:scale-110
-            "
-                >
-                  +
+                <span className="relative w-10 h-10 flex items-center justify-center">
+                  <span className="absolute transition-all duration-300 ease-in-out transform group-open:scale-0 group-open:opacity-0">
+                    +
+                  </span>
+                  <span className="absolute transition-all duration-300 ease-in-out transform scale-0 opacity-0 group-open:scale-100 group-open:opacity-100">
+                    -
+                  </span>
                 </span>
               </summary>
 
