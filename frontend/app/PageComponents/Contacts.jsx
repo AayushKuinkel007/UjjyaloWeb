@@ -57,19 +57,20 @@ const inputFields = [
 ];
 
 const services = [
-  "Web Design",
-  "Web Development",
-  "App Design",
-  "App Development",
-  "Ghostwriting",
+  "Custom Website Development",
+  "Website UI/UX Design",
+  "Responsive Web Design",
+  "Website Redesign & Optimization",
+  "Website Performance & SEO",
+  "Landing Page Design & Development",
   "Not sure yet",
 ];
 
 const budgets = [
-  "Under $1,000",
-  "$1,000 – $3,000",
-  "$3,000 – $7,000",
-  "$7,000+",
+  "Under $500",
+  "$500 – $1,000",
+  "$1,000 – $2,000",
+  "$2,000+",
   "Not sure yet",
 ];
 
@@ -233,8 +234,8 @@ const Contacts = () => {
               rows={5}
               className="w-full resize-none rounded-lg border border-[#2a2a2a] px-4 py-3 bg-[#0f0f0f] text-white placeholder:text-gray-600 outline-none focus:border-[#f48c25] focus:ring-1 focus:ring-[#f48c25]/20 transition-all duration-200"
               placeholder="What are you building?
-What problem are you trying to solve?
-Who is it for?"
+                          What problem are you trying to solve?
+                          Who is it for?"
             />
           </div>
 
