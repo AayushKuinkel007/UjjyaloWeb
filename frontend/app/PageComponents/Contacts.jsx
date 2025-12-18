@@ -91,7 +91,7 @@ const Contacts = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen py-16 px-4">
+    <section id="contact" className="min-h-screen py-1 px-4">
       {/* Header */}
       <div className="mb-16 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-bold text-center text-white mb-4">
@@ -135,7 +135,7 @@ const Contacts = () => {
 
           <div>
             <div
-              className="flex-1 h-[81.8%] px-8 py-6 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 overflow-y-auto scrollbar-thin"
+              className="flex-1 h-[86.8%] px-8 py-6 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 overflow-y-auto scrollbar-thin"
               onClick={(e) => e.stopPropagation()}
               style={{
                 scrollbarWidth: "thin",
