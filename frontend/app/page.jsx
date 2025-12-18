@@ -7,8 +7,8 @@ import ProjectsGrid from "./PageComponents/Projects";
 import Services from "./PageComponents/Services";
 import FAQs from "./PageComponents/FAQs";
 import Footer from "./Components/Footer";
-import Contacts from "./PageComponents/Contacts";
 import Process from "./PageComponents/how-we-work";
+import FinalCTA from "./PageComponents/FinalCTA";
 
 const page = () => {
   return (
@@ -21,7 +21,7 @@ const page = () => {
         <ProjectsGrid />
         <Process />
         <FAQs />
-        {/* <Contacts/> */}
+        <FinalCTA />
       </main>
 
       <Footer/>
