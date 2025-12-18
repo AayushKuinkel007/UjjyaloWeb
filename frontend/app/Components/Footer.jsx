@@ -63,7 +63,7 @@ const Footer = () => {
                   Home
                 </a>
               </li>
-              {["services", "process", "portfolio", "testimonials"].map(id => (
+              {["services", "portfolio", "process",  "testimonials"].map(id => (
                 <li key={id}>
                   <a
                     href={`#${id}`}
@@ -105,13 +105,15 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2.5">
-              {["FAQ", "Contact", "Privacy Policy", "Terms of Service"].map(item => (
+              {["FAQ", "Contact"].map(item => (
                 <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-white">
+                  <a href="#contact" onClick={(e) => handleSmoothScroll(e, "#contact")} className="text-gray-400 hover:text-white">
                     {item}
                   </a>
                 </li>
               ))}
+              <li className="text-gray-400 hover:text-white">Privay Policy</li>
+              <li className="text-gray-400 hover:text-white">Terms of Service</li>
             </ul>
           </div>
         </div>
