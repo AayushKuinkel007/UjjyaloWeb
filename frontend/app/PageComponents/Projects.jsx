@@ -109,7 +109,7 @@ export default function ProjectsGrid() {
       {/* Our Projects Header */}
       <div className="flex justify-center mb-10">
         <span
-          className="px-8 py-3     bg-white/10
+          className="px-8 py-3     bg-[#1a1a1a]/60
     backdrop-blur-xl
     border border-white/20 rounded-full text-white text-xs tracking-widest uppercase font-bold"
         >
