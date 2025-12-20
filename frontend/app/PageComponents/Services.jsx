@@ -88,8 +88,8 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section id="services" className="relative mb-10 overflow-x-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-[100px]">
+    <section id="services" className="relative mb-10 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[80px] md:mt-[100px]">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -102,7 +102,8 @@ const Services = () => {
             Our Services
           </span>
 
-          <h2 className="text-[60px] font-bold mb-2">
+          {/* 🔥 RESPONSIVE HEADING FIX */}
+          <h2 className="font-bold mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             Illuminating Digital Experiences
           </h2>
 
