@@ -6,51 +6,45 @@ import Link from "next/link";
 const Testimonials = () => {
   const testimonials = [
     {
-      description:
-        "I am a Developer @ Ujjyalo Web",
+      description: "I am a Developer @ Ujjyalo Web",
       image: logo,
       name: "Aayush Kuinkel",
-      designation:"Developer",
+      designation: "Developer",
       social: "@ak_theboss69",
     },
     {
-      description:
-        "I am a Developer @ Ujjyalo Web",
+      description: "I am a Developer @ Ujjyalo Web",
       image: logo,
       name: "Aayush Kuinkel",
-      designation:"Developer",
+      designation: "Developer",
       social: "@ak_theboss69",
     },
-        {
-      description:
-        "I am a Developer @ Ujjyalo Web",
+    {
+      description: "I am a Developer @ Ujjyalo Web",
       image: logo,
       name: "Aayush Kuinkel",
-      designation:"Developer",
+      designation: "Developer",
       social: "@ak_theboss69",
     },
-        {
-      description:
-        "I am a Developer @ Ujjyalo Web",
+    {
+      description: "I am a Developer @ Ujjyalo Web",
       image: logo,
       name: "Aayush Kuinkel",
-      designation:"Developer",
+      designation: "Developer",
       social: "@ak_theboss69",
     },
-        {
-      description:
-        "I am a Developer @ Ujjyalo Web",
+    {
+      description: "I am a Developer @ Ujjyalo Web",
       image: logo,
       name: "Aayush Kuinkel",
-      designation:"Developer",
+      designation: "Developer",
       social: "@ak_theboss69",
     },
-        {
-      description:
-        "I am a Developer @ Ujjyalo Web",
+    {
+      description: "I am a Developer @ Ujjyalo Web",
       image: logo,
       name: "Aayush Kuinkel",
-      designation:"Developer",
+      designation: "Developer",
       social: "@ak_theboss69",
     },
   ];
@@ -68,7 +62,7 @@ const Testimonials = () => {
           </span>
         </div>
         <div className="text-center mb-5">
-                      <h2 className="font-bold mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="font-bold mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             Illuminating Digital Experiences
           </h2>
 
