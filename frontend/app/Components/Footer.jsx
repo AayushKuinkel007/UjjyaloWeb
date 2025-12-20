@@ -4,6 +4,7 @@ import Image from "next/image";
 import logo from "../Assets/logo.svg";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Footer = () => {
   const handleSmoothScroll = (e, targetId) => {
@@ -40,10 +41,19 @@ const Footer = () => {
               <div className="lg:hidden">
                 <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                 <div className="flex gap-4">
-                  <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
+                  <Link
+                    href="https://www.instagram.com/ujjyaloweb/"
+                    className="w-10 h-10 border border-gray-700 rounded flex
+                  items-center justify-center hover:border-[#f48c25]
+                  hover:text-[#f48c25]"
+                  >
                     <Instagram size={20} />
-                  </a>
-                  <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] text-white hover:text-orange-500">
+                  </Link>
+
+                  <Link
+                    className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] text-white hover:text-[#f48c25]"
+                    href="https://x.com/ujjyaloweb"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 448 512"
@@ -52,11 +62,16 @@ const Footer = () => {
                     >
                       <path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z" />
                     </svg>
-                  </a>
+                  </Link>
 
-                  <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
+                  <Link
+                    href="https://www.linkedin.com/company/ujjyaloweb/posts/?feedView=all"
+                    className="w-10 h-10 border border-gray-700 rounded flex
+                  items-center justify-center hover:border-[#f48c25]
+                  hover:text-[#f48c25]"
+                  >
                     <Linkedin size={20} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -143,13 +158,13 @@ const Footer = () => {
                   Terms of Service
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="mailto:ujjyaloweb@gmail.com"
                     className="inline-flex items-center gap-2 text-[#f48c25] mb-8 hover:text-[#ff9d3d] transition-colors"
                   >
                     <Mail size={18} />
                     <span className="break-all">ujjyaloweb@gmail.com</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -162,10 +177,19 @@ const Footer = () => {
 
             <div className="hidden md:block">
               <div className="flex gap-4">
-                <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
+                <Link
+                  href="https://www.instagram.com/ujjyaloweb/"
+                  className="w-10 h-10 border border-gray-700 rounded flex
+                  items-center justify-center hover:border-[#f48c25]
+                  hover:text-[#f48c25] hover:shadow-[0_0_20px_#f48c25]"
+                >
                   <Instagram size={20} />
-                </a>
-                <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] text-white hover:text-orange-500">
+                </Link>
+
+                <Link
+                  className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] text-white hover:text-[#f48c25] hover:shadow-[0_0_20px_#f48c25]"
+                  href="https://x.com/ujjyaloweb"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 448 512"
@@ -174,11 +198,16 @@ const Footer = () => {
                   >
                     <path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z" />
                   </svg>
-                </a>
+                </Link>
 
-                <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
+                <Link
+                  href="https://www.linkedin.com/company/ujjyaloweb/posts/?feedView=all"
+                  className="w-10 h-10 border border-gray-700 rounded flex
+                  items-center justify-center hover:border-[#f48c25]
+                  hover:text-[#f48c25] hover:shadow-[0_0_20px_#f48c25]"
+                >
                   <Linkedin size={20} />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
