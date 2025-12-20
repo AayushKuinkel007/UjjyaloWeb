@@ -15,43 +15,23 @@ const Testimonials = () => {
     {
       description: "I am a Developer @ Ujjyalo Web",
       image: logo,
-      name: "Aayush Kuinkel",
+      name: "Susil Dhami",
       designation: "Developer",
-      social: "@ak_theboss69",
+      social: "@_susill",
     },
     {
-      description: "I am a Developer @ Ujjyalo Web",
+      description: "I am Ujjyalo Web",
       image: logo,
-      name: "Aayush Kuinkel",
+      name: "Ujjyalo Web",
       designation: "Developer",
-      social: "@ak_theboss69",
-    },
-    {
-      description: "I am a Developer @ Ujjyalo Web",
-      image: logo,
-      name: "Aayush Kuinkel",
-      designation: "Developer",
-      social: "@ak_theboss69",
-    },
-    {
-      description: "I am a Developer @ Ujjyalo Web",
-      image: logo,
-      name: "Aayush Kuinkel",
-      designation: "Developer",
-      social: "@ak_theboss69",
-    },
-    {
-      description: "I am a Developer @ Ujjyalo Web",
-      image: logo,
-      name: "Aayush Kuinkel",
-      designation: "Developer",
-      social: "@ak_theboss69",
+      social: "@ujjyaloweb",
     },
   ];
 
   const [scrollDir, setScrollDir] = useState("left");
 
-  const duplicatedTestimonials = [...testimonials, ...testimonials];
+  // Create more duplicates for seamless loop
+  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials, ...testimonials];
 
   return (
     <>
@@ -74,49 +54,134 @@ const Testimonials = () => {
             that are fast, scalable, and built for growth.
           </p>
         </div>
-        <div
-          className={`
-              flex gap-6 sm:gap-8 md:gap-10 whitespace-nowrap
-              ${
-                scrollDir === "left"
-                  ? "animate-[marquee-left_20s_linear_infinite]"
-                  : "animate-[marquee-right_20s_linear_infinite]"
-              }
-            `}
-        >
-          {duplicatedTestimonials.map((testimonial, index) => (
+        <div className="relative overflow-hidden py-3 sm:py-4 w-full sm:w-[95%] md:w-[70%] lg:w-[50%] xl:w-[60%] mx-auto mb-6 sm:mb-8">
+          {/* Fade edges */}
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-6 sm:w-8 md:w-10 bg-gradient-to-r from-black/20 to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-6 sm:w-8 md:w-10 bg-gradient-to-l from-black/20 to-transparent z-10" />
+          
+          <div className="flex gap-6 sm:gap-8 md:gap-10">
             <div
-              className="border border-white/20 rounded-[20px] p-6 w-80 min-w-80"
-              key={index}
+              className={`
+                flex gap-6 sm:gap-8 md:gap-10 whitespace-nowrap
+                ${
+                  scrollDir === "left"
+                    ? "animate-marquee-left"
+                    : "animate-marquee-right"
+                }
+              `}
             >
-              <p className="text-white/90 text-sm mb-6 whitespace-normal leading-relaxed">
-                "{testimonial.description}"
-              </p>
-              <div className="flex items-center gap-4">
-                <img
-                  src={testimonial.image.src}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div className="flex flex-col gap-0.5">
-                  <h3 className="text-white font-semibold text-sm">
-                    {testimonial.name}
-                  </h3>
-                  <p className="text-white/60 text-xs">
-                    {testimonial.designation}
+              {duplicatedTestimonials.map((testimonial, index) => (
+                <div
+                  className="border border-white/20 rounded-[20px] p-6 w-80 min-w-80"
+                  key={index}
+                >
+                  <p className="text-white/90 text-sm mb-6 whitespace-normal leading-relaxed">
+                    "{testimonial.description}"
                   </p>
-                  <Link
-                    href="https://www.instagram.com/ak_theboss69/"
-                    target="_blank"
-                  >
-                    {testimonial.social}
-                  </Link>
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={testimonial.image.src}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div className="flex flex-col gap-0.5">
+                      <h3 className="text-white font-semibold text-sm">
+                        {testimonial.name}
+                      </h3>
+                      <p className="text-white/60 text-xs">
+                        {testimonial.designation}
+                      </p>
+                      <Link
+                        href={`https://instagram.com/${testimonial.social.replace('@', '')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-400 text-xs hover:underline"
+                      >
+                        {testimonial.social}
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+            
+            {/* Duplicate for seamless loop */}
+            <div
+              className={`
+                flex gap-6 sm:gap-8 md:gap-10 whitespace-nowrap
+                ${
+                  scrollDir === "left"
+                    ? "animate-marquee-left"
+                    : "animate-marquee-right"
+                }
+              `}
+              aria-hidden="true"
+            >
+              {duplicatedTestimonials.map((testimonial, index) => (
+                <div
+                  className="border border-white/20 rounded-[20px] p-6 w-80 min-w-80"
+                  key={`duplicate-${index}`}
+                >
+                  <p className="text-white/90 text-sm mb-6 whitespace-normal leading-relaxed">
+                    "{testimonial.description}"
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={testimonial.image.src}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div className="flex flex-col gap-0.5">
+                      <h3 className="text-white font-semibold text-sm">
+                        {testimonial.name}
+                      </h3>
+                      <p className="text-white/60 text-xs">
+                        {testimonial.designation}
+                      </p>
+                      <Link
+                        href={`https://instagram.com/${testimonial.social.replace('@', '')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-400 text-xs hover:underline"
+                      >
+                        {testimonial.social}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
+
+      <style jsx>{`
+        @keyframes marquee-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes marquee-right {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        .animate-marquee-left {
+          animation: marquee-left 50s linear infinite;
+        }
+
+        .animate-marquee-right {
+          animation: marquee-right 50s linear infinite;
+        }
+      `}</style>
     </>
   );
 };
