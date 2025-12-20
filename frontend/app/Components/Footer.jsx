@@ -43,16 +43,18 @@ const Footer = () => {
                 <div className="flex gap-4">
                   <Link
                     href="https://www.instagram.com/ujjyaloweb/"
+                    target="_blank"
                     className="w-10 h-10 border border-gray-700 rounded flex
                   items-center justify-center hover:border-[#f48c25]
-                  hover:text-[#f48c25]"
+                  hover:text-[#f48c25] hover:shadow-[0_0_20px_#f48c25]"
                   >
                     <Instagram size={20} />
                   </Link>
 
                   <Link
-                    className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] text-white hover:text-[#f48c25]"
+                    className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] text-white hover:text-[#f48c25] hover:shadow-[0_0_20px_#f48c25]"
                     href="https://x.com/ujjyaloweb"
+                    target="_blank"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -66,9 +68,10 @@ const Footer = () => {
 
                   <Link
                     href="https://www.linkedin.com/company/ujjyaloweb/posts/?feedView=all"
+                    target="_blank"
                     className="w-10 h-10 border border-gray-700 rounded flex
                   items-center justify-center hover:border-[#f48c25]
-                  hover:text-[#f48c25]"
+                  hover:text-[#f48c25] hover:shadow-[0_0_20px_#f48c25]"
                   >
                     <Linkedin size={20} />
                   </Link>
@@ -179,6 +182,7 @@ const Footer = () => {
               <div className="flex gap-4">
                 <Link
                   href="https://www.instagram.com/ujjyaloweb/"
+                  target="_blank"
                   className="w-10 h-10 border border-gray-700 rounded flex
                   items-center justify-center hover:border-[#f48c25]
                   hover:text-[#f48c25] hover:shadow-[0_0_20px_#f48c25]"
@@ -189,6 +193,7 @@ const Footer = () => {
                 <Link
                   className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] text-white hover:text-[#f48c25] hover:shadow-[0_0_20px_#f48c25]"
                   href="https://x.com/ujjyaloweb"
+                  target="_blank"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -202,6 +207,7 @@ const Footer = () => {
 
                 <Link
                   href="https://www.linkedin.com/company/ujjyaloweb/posts/?feedView=all"
+                  target="_blank"
                   className="w-10 h-10 border border-gray-700 rounded flex
                   items-center justify-center hover:border-[#f48c25]
                   hover:text-[#f48c25] hover:shadow-[0_0_20px_#f48c25]"

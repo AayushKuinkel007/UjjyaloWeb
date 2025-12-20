@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import logo from "../Assets/logo.png";
+import Link from "next/link";
 
 const OpeningModal = () => {
   const [open, setOpen] = useState(true);
@@ -14,7 +15,6 @@ const OpeningModal = () => {
       {/* MAIN MODAL */}
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#020617]/70 backdrop-blur-sm px-4">
         <div className="relative w-full max-w-xl">
-
           {/* Floating Logo */}
           <motion.div
             className="absolute -top-20 left-1/2 -translate-x-1/2 z-20 h-36 w-36 sm:h-40 sm:w-40"
@@ -88,8 +88,9 @@ const OpeningModal = () => {
 
             {/* CTA */}
             <div className="mb-6 text-center">
-              <button
-                className="
+              <Link href="contact">
+                <button
+                  className="
                   rounded-full px-10 py-3
                   bg-[#f48c25]
                   text-[#0c2342] font-bold
@@ -97,9 +98,10 @@ const OpeningModal = () => {
                   hover:scale-105 hover:shadow-xl
                   transition-all
                 "
-              >
-                Claim Your Spot
-              </button>
+                >
+                  Claim Your Spot
+                </button>
+              </Link>
 
               <button
                 onClick={() => setPricingOpen(true)}
