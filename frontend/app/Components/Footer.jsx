@@ -106,11 +106,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2.5">
-              {["FAQ", "Contact"].map((item) => (
+              {["FAQ"].map((item) => (
                 <li key={item}>
                   <a
-                    href="#contact"
-                    onClick={(e) => handleSmoothScroll(e, "#contact")}
+                    href="#faq"
+                    onClick={(e) => handleSmoothScroll(e, "#faq")}
                     className="text-gray-400 hover:text-white"
                   >
                     {item}
