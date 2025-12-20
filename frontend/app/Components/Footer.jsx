@@ -30,14 +30,6 @@ const Footer = () => {
               app experiences.
             </p>
 
-            <a
-              href="mailto:ujjyaloweb@gmail.com"
-              className="inline-flex items-center gap-2 text-[#f48c25] mb-8 hover:text-[#ff9d3d] transition-colors"
-            >
-              <Mail size={18} />
-              <span className="break-all">ujjyaloweb@gmail.com</span>
-            </a>
-
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex gap-4">
               <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
@@ -68,19 +60,17 @@ const Footer = () => {
                   Home
                 </a>
               </li>
-              {["services", "projects", "process", "testimonials"].map(
-                (id) => (
-                  <li key={id}>
-                    <a
-                      href={`#${id}`}
-                      onClick={(e) => handleSmoothScroll(e, `#${id}`)}
-                      className="text-gray-400 hover:text-white"
-                    >
-                      {id.charAt(0).toUpperCase() + id.slice(1)}
-                    </a>
-                  </li>
-                )
-              )}
+              {["services", "projects", "process", "testimonials"].map((id) => (
+                <li key={id}>
+                  <a
+                    href={`#${id}`}
+                    onClick={(e) => handleSmoothScroll(e, `#${id}`)}
+                    className="text-gray-400 hover:text-white"
+                  >
+                    {id.charAt(0).toUpperCase() + id.slice(1)}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -120,6 +110,15 @@ const Footer = () => {
               <li className="text-gray-400 hover:text-white">Privay Policy</li>
               <li className="text-gray-400 hover:text-white">
                 Terms of Service
+              </li>
+              <li>
+                <a
+                  href="mailto:ujjyaloweb@gmail.com"
+                  className="inline-flex items-center gap-2 text-[#f48c25] mb-8 hover:text-[#ff9d3d] transition-colors"
+                >
+                  <Mail size={18} />
+                  <span className="break-all">ujjyaloweb@gmail.com</span>
+                </a>
               </li>
             </ul>
           </div>
