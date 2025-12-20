@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight } from "phosphor-react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const Hero = () => {
@@ -15,12 +15,7 @@ const Hero = () => {
   ];
 
   const [scrollDir, setScrollDir] = useState("right");
-  const [mounted, setMounted] = useState(false);
   const router = useRouter();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const scrollToProjects = () => {
     const projectsSection = document.querySelector('#projects');
@@ -81,7 +76,7 @@ const Hero = () => {
           </button>
         </div>
 
-        {/* Flowing Menu (REFERENCE-BASED) */}
+        {/* Flowing Menu */}
         <div className="relative overflow-hidden py-3 sm:py-4 w-full sm:w-[95%] md:w-[70%] lg:w-[50%] xl:w-[40%] mx-auto mb-6 sm:mb-8">
           {/* Fade edges */}
           <div className="pointer-events-none absolute left-0 top-0 h-full w-6 sm:w-8 md:w-10 bg-gradient-to-r from-black/20 to-transparent z-10" />
@@ -124,7 +119,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Inline animations – pure Tailwind style */}
+        {/* Inline animations */}
         <style jsx>{`
           @keyframes marquee-left {
             0% {

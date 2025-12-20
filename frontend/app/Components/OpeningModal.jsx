@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import logo from "../Assets/logo.png";
-const OpeningModal = () => {
-  const [open, setOpen] = useState(false);
-  const [pricingOpen, setPricingOpen] = useState(false);
 
-  useEffect(() => {
-    setOpen(true);
-  }, []);
+const OpeningModal = () => {
+  const [open, setOpen] = useState(true);
+  const [pricingOpen, setPricingOpen] = useState(false);
 
   const handleClose = () => {
     setOpen(false);
@@ -16,9 +14,11 @@ const OpeningModal = () => {
   const handlepricingOpen = () => {
     setPricingOpen(true);
   };
-    const handlepricingClose = () => {
+
+  const handlepricingClose = () => {
     setPricingOpen(false);
   };
+
   return (
     <>
       {open && (
@@ -33,11 +33,14 @@ const OpeningModal = () => {
                   X
                 </button>
               </div>
-              <img
-                src={logo.src}
-                alt="logo"
-                className="h-40 w-40 absolute top-[-35px] lg:left-55 left-35 z-10"
-              />
+              <div className="h-40 w-40 absolute top-[-35px] lg:left-55 left-35 z-10 relative">
+                <Image
+                  src={logo}
+                  alt="logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               {/* Modal Card */}
               <motion.div
                 className="relative w-full max-w-xl rounded-2xl p-8 text-white border border-white/20 shadow-2xl"
@@ -122,21 +125,19 @@ const OpeningModal = () => {
           </div>
 
           {pricingOpen && (
-            <div
-              className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 backdrop-blur-sm px-4"
-            >
+            <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
               <div
                 className="relative px-[50px] py-[50px] rounded-2xl bg-[#0c2342] backdrop-blur-xl text-white"
                 onClick={(e) => e.stopPropagation()}
               >
-                              <div>
-                <button
-                  className="absolute top-2 right-5 py-2 px-3 bg-[#454443] rounded-xl hover:bg-[#454443]/60"
-                  onClick={handlepricingClose}
-                >
-                  X
-                </button>
-              </div>
+                <div>
+                  <button
+                    className="absolute top-2 right-5 py-2 px-3 bg-[#454443] rounded-xl hover:bg-[#454443]/60"
+                    onClick={handlepricingClose}
+                  >
+                    X
+                  </button>
+                </div>
                 <h1>This is pricing Modal</h1>
               </div>
             </div>

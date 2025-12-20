@@ -1,4 +1,5 @@
 import { Instagram, Twitter, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 import logo from "../Assets/logo.svg";
 
 const Footer = () => {
@@ -17,8 +18,8 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4 ms-8 md:ms-0 lg:ms-20">
-              <img
-                src={logo.src}
+              <Image
+                src={logo}
                 alt="UjjyaloWeb Logo"
                 className="h-10 scale-500 w-auto"
               />

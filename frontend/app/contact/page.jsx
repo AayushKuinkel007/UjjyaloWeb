@@ -95,10 +95,10 @@ const Contacts = () => {
       {/* Header */}
       <div className="mb-8 md:mb-12 max-w-4xl mx-auto text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4">
-          Let's Build Something Amazing
+          Let&apos;s Build Something Amazing
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-gray-400">
-          Tell us about your project and let's bring your vision to life
+          Tell us about your project and let&apos;s bring your vision to life
         </p>
       </div>
 
@@ -133,7 +133,7 @@ const Contacts = () => {
           ))}
         </div>
 
-        {/* Form - Full width */}
+        {/* Form */}
         <div className="rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] p-4 sm:p-6 md:p-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 md:gap-x-6 gap-y-4 md:gap-y-5">
             {/* Left Column */}
@@ -219,9 +219,9 @@ Who is it for?"
             </div>
           </div>
 
-          {/* Bottom Section - Full Width */}
+          {/* Bottom Section */}
           <div className="mt-5 md:mt-6">
-            {/* Ready Checkbox - Centered */}
+            {/* Ready Checkbox */}
             <label className="flex items-center justify-center gap-3 cursor-pointer mb-5 md:mb-6 group">
               <div className="relative">
                 <input
@@ -237,7 +237,7 @@ Who is it for?"
                 </div>
               </div>
               <span className="text-gray-300 text-xs sm:text-sm">
-                I'm ready to start within the next 30 days
+                I&apos;m ready to start within the next 30 days
               </span>
             </label>
 
@@ -306,7 +306,7 @@ const FormOptions = ({
                 : "border border-[#2a2a2a] bg-[#0f0f0f] text-gray-300 hover:bg-[#1a1a1a]"
             }`}
           >
-            {/* Tick - only show if showCheck is true */}
+            {/* Tick */}
             {showCheck && isSelected && (
               <Check
                 size={12}
