@@ -219,3 +219,24 @@ body {
     --tw-gradient-to: hsl(var(--timeline-primary) / 0.2) var(--tw-gradient-to-position);
   }
 }
+
+/* Fix horizontal scrollbar - added by Claude */
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+#__next {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+main {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+section {
+  overflow-x: hidden;
+  max-width: 100vw;
+}

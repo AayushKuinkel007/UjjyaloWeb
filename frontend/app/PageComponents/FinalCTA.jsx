@@ -24,11 +24,11 @@ const FinalCTA = () => {
         
         <div className="relative z-10 space-y-4 md:space-y-6">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white tracking-tight leading-tight">
-            Let's Illuminate Your Next Project
+            Let&apos;s Illuminate Your Next Project
           </h2>
           
           <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto px-4">
-            Tell us a bit about what you're building & we'll take it from there.
+            Tell us a bit about what you&apos;re building & we&apos;ll take it from there.
           </p>
           
           <div className="pt-2 md:pt-4">
