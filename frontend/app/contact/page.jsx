@@ -259,7 +259,7 @@ Who is it for?"
               Your information is safe and will never be shared.
             </p>
             <Link href="/">
-              <p className="text-center text-gray-400 text-xs sm:text-sm flex justify-center items-center gap-1">
+              <p className="text-center text-white text-xs sm:text-sm flex justify-center items-center gap-1">
                 <ArrowLeft size={14} weight="regular" />
                 Back To Home
               </p>
