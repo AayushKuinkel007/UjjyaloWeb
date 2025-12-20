@@ -1,4 +1,6 @@
 "use client";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 import {
   ArrowRight,
   Clock,
@@ -145,7 +147,9 @@ const Contacts = () => {
                       className="block text-white text-xs md:text-sm font-medium mb-2"
                     >
                       {label}
-                      {required && <span className="text-[#f48c25] ml-1">*</span>}
+                      {required && (
+                        <span className="text-[#f48c25] ml-1">*</span>
+                      )}
                       {optional && (
                         <span className="text-gray-500 text-xs ml-2">
                           (optional)
@@ -250,10 +254,16 @@ Who is it for?"
             {/* Divider and Privacy Notice */}
             <hr className="border-[#2a2a2a] my-4 md:my-5" />
 
-            <p className="text-center text-gray-400 text-xs sm:text-sm flex justify-center items-center gap-2">
+            <p className="text-center text-gray-400 text-xs sm:text-sm flex justify-center items-center gap-2 mb-3">
               <Lock size={14} weight="regular" />
               Your information is safe and will never be shared.
             </p>
+            <Link href="/">
+              <p className="text-center text-gray-400 text-xs sm:text-sm flex justify-center items-center gap-1">
+                <ArrowLeft size={14} weight="regular" />
+                Back To Home
+              </p>
+            </Link>
           </div>
         </div>
       </div>
@@ -298,7 +308,11 @@ const FormOptions = ({
           >
             {/* Tick - only show if showCheck is true */}
             {showCheck && isSelected && (
-              <Check size={12} weight="bold" className="text-black md:w-[14px] md:h-[14px]" />
+              <Check
+                size={12}
+                weight="bold"
+                className="text-black md:w-[14px] md:h-[14px]"
+              />
             )}
 
             {/* Label */}
@@ -308,7 +322,9 @@ const FormOptions = ({
       })}
     </div>
 
-    {helper && <p className="mt-2 text-[10px] sm:text-xs text-gray-500">{helper}</p>}
+    {helper && (
+      <p className="mt-2 text-[10px] sm:text-xs text-gray-500">{helper}</p>
+    )}
   </div>
 );
 
