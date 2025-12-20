@@ -45,10 +45,10 @@ const Hero = () => {
 
         {/* Heading */}
         <div className="mb-8 sm:mb-10 md:mb-15">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-bold text-center leading-tight px-2">
-            Bringing Your Brand Into Light
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-bold text-center leading-tight px-2 mb-8">
+            Bringing Your <span className="text-[#f48c25]"> Brand Into Light</span>
           </h1>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-center mb-6 sm:mb-7 md:mb-9 leading-tight px-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[35apx] font-bold text-center mb-6 sm:mb-7 md:mb-9 leading-tight px-2">
             Through Web & App Design That Performs.
           </h2>
 
