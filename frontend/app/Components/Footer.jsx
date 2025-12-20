@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Instagram, Twitter, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 import logo from "../Assets/logo.svg";
@@ -12,9 +12,9 @@ const Footer = () => {
     element?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-    const [termsOpen, setTermsOpen] = useState(false);
-    const [privacyOpen, setPrivacyOpen] = useState(false);
-  
+  const [termsOpen, setTermsOpen] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+
   return (
     <>
       <footer className="text-white">
@@ -42,9 +42,17 @@ const Footer = () => {
                 <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
                   <Instagram size={20} />
                 </a>
-                <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
-                  <Twitter size={20} />
+                <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] text-white hover:text-orange-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    className="w-5 h-5"
+                    fill="currentColor"
+                  >
+                    <path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z" />
+                  </svg>
                 </a>
+
                 <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
                   <Linkedin size={20} />
                 </a>
@@ -116,10 +124,20 @@ const Footer = () => {
                     </a>
                   </li>
                 ))}
-                <li className="text-gray-400 hover:text-white hover:cursor-pointer" onClick={()=>{setPrivacyOpen(true)}}>
+                <li
+                  className="text-gray-400 hover:text-white hover:cursor-pointer"
+                  onClick={() => {
+                    setPrivacyOpen(true);
+                  }}
+                >
                   Privay Policy
                 </li>
-                <li className="text-gray-400 hover:text-white hover:cursor-pointer" onClick={()=>{setTermsOpen(true)}}>
+                <li
+                  className="text-gray-400 hover:text-white hover:cursor-pointer"
+                  onClick={() => {
+                    setTermsOpen(true);
+                  }}
+                >
                   Terms of Service
                 </li>
                 <li>
@@ -159,16 +177,14 @@ const Footer = () => {
             </button>
 
             <h1 className="text-2xl font-semibold mb-4 text-[#daa520]">
-             Privacy Policy
+              Privacy Policy
             </h1>
           </motion.div>
         </div>
       )}
 
-      {
-
-        termsOpen && (
-                  <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#020617]/70 backdrop-blur-sm px-4">
+      {termsOpen && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#020617]/70 backdrop-blur-sm px-4">
           <motion.div
             className="relative bg-[#0c2342]/95 text-[#e5e7eb] rounded-2xl p-8 max-w-md w-full border border-white/10"
             initial={{ scale: 0.9, opacity: 0 }}
@@ -183,12 +199,11 @@ const Footer = () => {
             </button>
 
             <h1 className="text-2xl font-semibold mb-4 text-[#daa520]">
-             Terms of Service
+              Terms of Service
             </h1>
           </motion.div>
         </div>
-        )
-      }
+      )}
     </>
   );
 };
