@@ -10,7 +10,7 @@ const Privacy = () => {
             Privacy Policy
           </h1>
           <div className="text-sm text-gray-400 space-y-1">
-            <p className="text-lg font-semibold text-white">UjjaloWeb</p>
+            <p className="text-lg font-semibold text-white">UjjyaloWeb</p>
             <p>
               <span className="font-medium">Effective Date:</span> December 21,
               2024
@@ -30,7 +30,7 @@ const Privacy = () => {
             </h2>
             <div className="space-y-4">
               <p className="leading-relaxed">
-                Welcome to UjjaloWeb (&quot;we,&quot; &quot;us,&quot;
+                Welcome to UjjyaloWeb (&quot;we,&quot; &quot;us,&quot;
                 &quot;our&quot;). We are committed to protecting your privacy
                 and personal information. This Privacy Policy explains how we
                 collect, use, disclose, and safeguard your information when you
@@ -343,7 +343,7 @@ const Privacy = () => {
                   4.3 Business Transfers
                 </h3>
                 <p className="text-gray-300">
-                  If UjjaloWeb is involved in a merger, acquisition, or sale of
+                  If UjjyaloWeb is involved in a merger, acquisition, or sale of
                   assets, your information may be transferred. We will notify
                   you of any such change.
                 </p>
@@ -909,7 +909,7 @@ const Privacy = () => {
             </p>
 
             <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-700/50 rounded-lg p-6">
-              <h3 className="text-2xl font-bold text-white mb-4">UjjaloWeb</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">UjjyaloWeb</h3>
               <div className="space-y-3 text-gray-300">
                 <p>
                   <span className="font-semibold text-white">Email:</span>{" "}
@@ -937,7 +937,7 @@ const Privacy = () => {
                   <span className="font-semibold text-white">
                     Social Media:
                   </span>{" "}
-                  @ujjaloweb (Instagram, Facebook)
+                  @Ujjyaloweb (Instagram, Facebook)
                 </p>
               </div>
             </div>
@@ -986,7 +986,7 @@ const Privacy = () => {
                 21, 2024
               </p>
               <p className="text-sm text-gray-500 pt-4">
-                © 2024 UjjaloWeb. All rights reserved.
+                © 2024 UjjyaloWeb. All rights reserved.
               </p>
             </div>
           </div>

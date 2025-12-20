@@ -12,7 +12,7 @@ const TermsOfService = () => {
             Terms of Service
           </h1>
           <div className="text-sm text-gray-400 space-y-1">
-            <p className="text-lg font-semibold text-white">UjjaloWeb</p>
+            <p className="text-lg font-semibold text-white">UjjyaloWeb</p>
             <p>
               <span className="font-medium">Effective Date:</span> December 21, 2024
             </p>
@@ -30,9 +30,9 @@ const TermsOfService = () => {
             </h2>
             <div className="space-y-4">
               <p className="leading-relaxed">
-                Welcome to UjjaloWeb. These Terms of Service (&quot;Terms&quot;) govern 
+                Welcome to UjjyaloWeb. These Terms of Service (&quot;Terms&quot;) govern 
                 your use of our services and constitute a legally binding agreement between 
-                you (&quot;Client,&quot; &quot;you,&quot; &quot;your&quot;) and UjjaloWeb 
+                you (&quot;Client,&quot; &quot;you,&quot; &quot;your&quot;) and UjjyaloWeb 
                 (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;).
               </p>
               
@@ -63,7 +63,7 @@ const TermsOfService = () => {
                   2.1 What We Offer
                 </h3>
                 <p className="mb-3">
-                  UjjaloWeb provides web development services, including but not limited to:
+                  UjjyaloWeb provides web development services, including but not limited to:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-gray-300">
                   <li>Custom website design and development</li>
@@ -575,7 +575,7 @@ const TermsOfService = () => {
 
               <div>
                 <h3 className="text-2xl font-semibold text-white mb-4">
-                  7.2 Cancellation by UjjaloWeb
+                  7.2 Cancellation by UjjyaloWeb
                 </h3>
                 <p className="mb-3">We may cancel the project and refund your payment if:</p>
                 <ul className="list-disc pl-6 space-y-2 text-gray-300 mb-4">
@@ -1134,7 +1134,7 @@ const TermsOfService = () => {
 
               <div>
                 <h3 className="text-2xl font-semibold text-white mb-4">
-                  13.2 Termination by UjjaloWeb
+                  13.2 Termination by UjjyaloWeb
                 </h3>
                 <p className="mb-3">We may terminate the contract immediately if:</p>
                 <ul className="list-disc pl-6 space-y-2 text-gray-300 mb-4">
@@ -1279,7 +1279,7 @@ const TermsOfService = () => {
                 </h3>
                 <p className="text-gray-300">
                   These Terms, together with your signed contract and project proposal, 
-                  constitute the entire agreement between you and UjjaloWeb. They supersede 
+                  constitute the entire agreement between you and UjjyaloWeb. They supersede 
                   all prior discussions, proposals, or agreements.
                 </p>
               </div>
@@ -1373,7 +1373,7 @@ const TermsOfService = () => {
                   15.7 Independent Contractors
                 </h3>
                 <p className="mb-3">
-                  You and UjjaloWeb are independent contractors. These Terms do NOT create:
+                  You and UjjyaloWeb are independent contractors. These Terms do NOT create:
                 </p>
                 <ul className="list-disc pl-6 space-y-1 text-gray-300">
                   <li>Partnership or joint venture</li>
@@ -1389,7 +1389,7 @@ const TermsOfService = () => {
                 <p className="mb-3">All notices must be in writing and sent to:</p>
                 <div className="grid md:grid-cols-2 gap-4 mb-3">
                   <div className="bg-gray-800/30 border border-gray-700 rounded-lg p-4">
-                    <p className="font-semibold text-blue-400 mb-2">To UjjaloWeb:</p>
+                    <p className="font-semibold text-blue-400 mb-2">To UjjyaloWeb:</p>
                     <p className="text-sm text-gray-300">
                       Email: ujjyaloweb@gmail.com<br />
                       Phone: +977 9745347065
@@ -1453,7 +1453,7 @@ const TermsOfService = () => {
             </p>
 
             <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-700/50 rounded-lg p-6">
-              <h3 className="text-2xl font-bold text-white mb-4">UjjaloWeb</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">UjjyaloWeb</h3>
               <div className="space-y-3 text-gray-300">
                 <p>
                   <span className="font-semibold text-white">Email:</span>{" "}
@@ -1477,7 +1477,7 @@ const TermsOfService = () => {
                   <span className="font-semibold text-white">Location:</span> Kathmandu, Nepal
                 </p>
                 <p>
-                  <span className="font-semibold text-white">Social Media:</span> @ujjaloweb 
+                  <span className="font-semibold text-white">Social Media:</span> @Ujjyaloweb 
                   (Instagram, Facebook)
                 </p>
                 <p className="pt-2 border-t border-gray-700">
@@ -1528,7 +1528,7 @@ const TermsOfService = () => {
                 <span className="font-semibold">Last Updated:</span> December 21, 2024
               </p>
               <p className="text-sm text-gray-500 pt-4">
-                © 2024 UjjaloWeb. All rights reserved.
+                © 2024 UjjyaloWeb. All rights reserved.
               </p>
             </div>
           </div>
