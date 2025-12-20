@@ -80,6 +80,11 @@ body {
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
+::selection{
+  background-color: rgba(99, 102, 241, 0.25) ;
+  color: #000000;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
