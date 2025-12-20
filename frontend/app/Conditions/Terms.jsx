@@ -10,7 +10,7 @@ export default function TermsOfService() {
             Terms of Service
           </h1>
           <p className="text-sm text-gray-400">
-            <strong>UjjaloWeb</strong>
+            <strong>UjjyaloWeb</strong>
             <br />
             Effective Date: December 21, 2024
             <br />
@@ -25,9 +25,9 @@ export default function TermsOfService() {
               1. Agreement to Terms
             </h2>
             <p>
-              These Terms of Service ("Terms") govern your use of UjjaloWeb
+              These Terms of Service ("Terms") govern your use of UjjyaloWeb
               services and form a legally binding agreement between you
-              ("Client") and UjjaloWeb ("we", "us", "our").
+              ("Client") and UjjyaloWeb ("we", "us", "our").
             </p>
             <ul className="list-disc pl-6 mt-3 space-y-1">
               <li>You agree to be bound by these Terms</li>
@@ -249,7 +249,7 @@ export default function TermsOfService() {
           </section>
 
           <p className="pt-10 text-sm text-gray-500">
-            © 2024 UjjaloWeb. All rights reserved.
+            © 2024 UjjyaloWeb. All rights reserved.
           </p>
         </div>
       </section>

@@ -8,7 +8,7 @@ const Privacy = () => {
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">Privacy Policy</h1>
           <p className="text-sm text-gray-400">
-            <strong>UjjaloWeb</strong>
+            <strong>UjjyaloWeb</strong>
             <br />
             Effective Date: December 21, 2024
             <br />
@@ -23,7 +23,7 @@ const Privacy = () => {
               1. Introduction
             </h2>
             <p>
-              Welcome to UjjaloWeb ("we," "us," "our"). We are committed to
+              Welcome to UjjyaloWeb ("we," "us," "our"). We are committed to
               protecting your privacy and personal information. This Privacy
               Policy explains how we collect, use, disclose, and safeguard your
               information when you visit our website, use our services, or
@@ -229,7 +229,7 @@ const Privacy = () => {
           </section>
 
           <p className="pt-10 text-sm text-gray-500">
-            © 2024 UjjaloWeb. All rights reserved.
+            © 2024 UjjyaloWeb. All rights reserved.
           </p>
         </div>
       </section>
