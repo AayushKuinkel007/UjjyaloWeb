@@ -68,7 +68,7 @@ const Footer = () => {
                   Home
                 </a>
               </li>
-              {["services", "portfolio", "process", "testimonials"].map(
+              {["services", "projects", "process", "testimonials"].map(
                 (id) => (
                   <li key={id}>
                     <a
