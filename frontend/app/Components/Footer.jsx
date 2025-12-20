@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="flex flex-col space-y-8 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-12 md:space-y-0">
             {/* Brand */}
             <div>
-              <div className="flex items-center gap-2 mb-4 ms-8 md:ms-0 lg:ms-20">
+              <div className="flex items-center gap-2 mb-4 ms-8 md:ms-9 lg:ms-9 xl:ms-20">
                 <Image
                   src={logo}
                   alt="UjjyaloWeb Logo"
