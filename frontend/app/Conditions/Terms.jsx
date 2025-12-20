@@ -25,9 +25,10 @@ export default function TermsOfService() {
               1. Agreement to Terms
             </h2>
             <p>
-              These Terms of Service ("Terms") govern your use of UjjyaloWeb
-              services and form a legally binding agreement between you
-              ("Client") and UjjyaloWeb ("we", "us", "our").
+              These Terms of Service (&quot;Terms&quot;) govern your use of
+              UjjyaloWeb services and form a legally binding agreement between
+              you (&quot;Client&quot;) and UjjyaloWeb (&quot;we&quot;,
+              &quot;us&quot;, &quot;our&quot;).
             </p>
             <ul className="list-disc pl-6 mt-3 space-y-1">
               <li>You agree to be bound by these Terms</li>
@@ -76,10 +77,10 @@ export default function TermsOfService() {
               initial payment.
             </p>
             <ul className="list-disc pl-6 mt-3 space-y-1">
-              <li>Planning & Discovery</li>
-              <li>Design & Review</li>
-              <li>Development & Integration</li>
-              <li>Testing, Launch & Handover</li>
+              <li>Planning &amp; Discovery</li>
+              <li>Design &amp; Review</li>
+              <li>Development &amp; Integration</li>
+              <li>Testing, Launch &amp; Handover</li>
             </ul>
           </section>
 
@@ -151,7 +152,7 @@ export default function TermsOfService() {
               9. Warranties and Disclaimers
             </h2>
             <p>
-              Services are provided “as is” without guarantees of business
+              Services are provided as is without guarantees of business
               performance, SEO ranking, or future compatibility.
             </p>
           </section>

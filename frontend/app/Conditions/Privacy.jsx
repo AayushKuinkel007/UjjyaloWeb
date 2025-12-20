@@ -23,11 +23,11 @@ const Privacy = () => {
               1. Introduction
             </h2>
             <p>
-              Welcome to UjjyaloWeb ("we," "us," "our"). We are committed to
-              protecting your privacy and personal information. This Privacy
-              Policy explains how we collect, use, disclose, and safeguard your
-              information when you visit our website, use our services, or
-              communicate with us.
+              Welcome to UjjyaloWeb (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;).
+              We are committed to protecting your privacy and personal
+              information. This Privacy Policy explains how we collect, use,
+              disclose, and safeguard your information when you visit our
+              website, use our services, or communicate with us.
             </p>
             <p className="mt-3 font-medium text-gray-200">
               By engaging our services, you agree to the collection and use of
@@ -172,7 +172,7 @@ const Privacy = () => {
           {/* 10 */}
           <section>
             <h2 className="text-2xl font-semibold text-white mb-3">
-              10. Children's Privacy
+              10. Children&apos;s Privacy
             </h2>
             <p>
               Our services are not intended for individuals under 18 years of

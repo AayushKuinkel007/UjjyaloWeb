@@ -57,7 +57,7 @@ const FAQs = () => {
       {/* Title */}
       <div className="flex justify-center">
         <span className="inline-block px-8 py-3 bg-[#1a1a1a]/40 border border-white/10 font-bold uppercase text-white text-xs rounded-full mb-4 mt-4">
-          FAQ's
+          FAQ&apos;s
         </span>
       </div>
 
