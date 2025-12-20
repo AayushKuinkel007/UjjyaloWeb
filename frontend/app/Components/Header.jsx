@@ -29,7 +29,7 @@ const Header = () => {
     <header
       className={`fixed top-0 z-50 text-white px-4 sm:px-6 lg:px-0 ${
         isOpen
-          ? "backdrop-blur-md bg-black/90 shadow-lg py-4 shadow-none w-full"
+          ? "backdrop-blur-md bg-black/90 lg:bg-white/10 shadow-lg py-4 shadow-none w-full"
           : scrolled
           ? "backdrop-blur-md bg-white/10 border border-white/20 shadow-lg w-[95%] lg:w-[700px] lg:left-1/2 lg:-translate-x-1/2 lg:rounded-[20px] mt-4 mx-2.5 rounded-[20px]"
           : "backdrop-blur-md bg-white/10 border border-white/20 shadow-lg lg:bg-transparent lg:py-1 lg:border-none lg:shadow-none w-[95%] lg:w-full ms-2.5 mt-2 rounded-[20px]"
