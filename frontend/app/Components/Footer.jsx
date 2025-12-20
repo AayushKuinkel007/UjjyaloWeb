@@ -37,25 +37,27 @@ const Footer = () => {
                 app experiences.
               </p>
 
-              <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-              <div className="flex gap-4">
-                <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
-                  <Instagram size={20} />
-                </a>
-                <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] text-white hover:text-orange-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                    className="w-5 h-5"
-                    fill="currentColor"
-                  >
-                    <path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z" />
-                  </svg>
-                </a>
+              <div className="lg:hidden">
+                <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+                <div className="flex gap-4">
+                  <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
+                    <Instagram size={20} />
+                  </a>
+                  <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] text-white hover:text-orange-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512"
+                      className="w-5 h-5"
+                      fill="currentColor"
+                    >
+                      <path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z" />
+                    </svg>
+                  </a>
 
-                <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
-                  <Linkedin size={20} />
-                </a>
+                  <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
+                    <Linkedin size={20} />
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -153,10 +155,32 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-10 pt-6 text-center">
+          <div className="border-t border-gray-800 mt-10 pt-6 text-center flex justify-between items-center">
             <p className="text-gray-400 text-sm">
               © 2025 UjjyaloWeb. All rights reserved.
             </p>
+
+            <div className="hidden md:block">
+              <div className="flex gap-4">
+                <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
+                  <Instagram size={20} />
+                </a>
+                <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] text-white hover:text-orange-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    className="w-5 h-5"
+                    fill="currentColor"
+                  >
+                    <path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z" />
+                  </svg>
+                </a>
+
+                <a className="w-10 h-10 border border-gray-700 rounded flex items-center justify-center hover:border-[#f48c25] hover:text-orange-500">
+                  <Linkedin size={20} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
