@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import logo from "../Assets/logo.png";
-
+import Link from "next/link";
+import { Lightning } from "phosphor-react";
 const OpeningModal = () => {
   const [open, setOpen] = useState(true);
   const [pricingOpen, setPricingOpen] = useState(false);
@@ -14,7 +15,6 @@ const OpeningModal = () => {
       {/* MAIN MODAL */}
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#020617]/70 backdrop-blur-sm px-4">
         <div className="relative w-full max-w-xl">
-
           {/* Floating Logo */}
           <motion.div
             className="absolute -top-20 left-1/2 -translate-x-1/2 z-20 h-36 w-36 sm:h-40 sm:w-40"
@@ -50,7 +50,7 @@ const OpeningModal = () => {
             {/* Close Button */}
             <button
               onClick={() => setOpen(false)}
-              className="absolute top-4 right-4 px-3 py-1 rounded-xl bg-white/10 hover:bg-white/20 transition"
+              className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 transition"
             >
               ✕
             </button>
@@ -62,9 +62,9 @@ const OpeningModal = () => {
                 <span className="block h-[0.5px] w-full bg-white/30 mt-1" />
               </span>
 
-              <span className="text-[#38bdf8]">
+              <span className="text-[#f48c25]">
                 Only 10 Spots Available
-                <span className="block h-[0.5px] w-full bg-[#38bdf8]/40 mt-1" />
+                <span className="block h-[0.5px] w-full bg-[#f48c25]/40 mt-1" />
               </span>
             </div>
 
@@ -72,7 +72,7 @@ const OpeningModal = () => {
             <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-6 text-center sm:text-left">
               Build Your <br />
               Website <br />
-              <span className="text-[#daa520] font-semibold">
+              <span className="text-[#f48c25] font-semibold">
                 at your price.
               </span>
             </h1>
@@ -88,18 +88,20 @@ const OpeningModal = () => {
 
             {/* CTA */}
             <div className="mb-6 text-center">
-              <button
-                className="
+              <Link href="contact">
+                <button
+                  className="
                   rounded-full px-10 py-3
-                  bg-gradient-to-r from-[#daa520] to-[#facc15]
+                  bg-[#f48c25]
                   text-[#0c2342] font-bold
                   shadow-lg shadow-[#daa520]/30
                   hover:scale-105 hover:shadow-xl
                   transition-all
                 "
-              >
-                Claim Your Spot
-              </button>
+                >
+                  Claim Your Spot
+                </button>
+              </Link>
 
               <button
                 onClick={() => setPricingOpen(true)}
@@ -111,7 +113,7 @@ const OpeningModal = () => {
 
             {/* Footer */}
             <div className="flex flex-wrap justify-center gap-3 text-xs text-[#9ca3af]">
-              <span>⚡ Spots filling fast</span>
+              <span className="flex justify-start gap-1 items-center"> <Lightning/> Spots filling fast</span>
               <span>• Only 10 projects accepted</span>
               <span>• Offer ends Jan 5, 2026</span>
             </div>
@@ -130,7 +132,7 @@ const OpeningModal = () => {
           >
             <button
               onClick={() => setPricingOpen(false)}
-              className="absolute top-4 right-4 px-3 py-1 rounded-xl bg-white/10 hover:bg-white/20"
+              className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20"
             >
               ✕
             </button>

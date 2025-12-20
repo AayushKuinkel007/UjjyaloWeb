@@ -53,11 +53,13 @@ const FAQs = () => {
   ];
 
   return (
-    <section id="faq" className="w-full py-12 md:py-16 px-4">
+    <section id="faq" className="w-full py-12 md:py-5 px-4">
       {/* Title */}
-      {/* <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 md:mb-12 text-center">
-        FAQ's
-      </h2> */}
+      <div className="flex justify-center">
+        <span className="inline-block px-8 py-3 bg-[#1a1a1a]/40 border border-white/10 font-bold uppercase text-white text-xs rounded-full mb-4 mt-4">
+          FAQ&apos;s
+        </span>
+      </div>
 
       {/* FAQ LIST */}
       <div className="max-w-4xl mx-auto space-y-4 md:space-y-5">

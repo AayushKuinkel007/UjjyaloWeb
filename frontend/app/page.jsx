@@ -9,6 +9,7 @@ import FAQs from "./PageComponents/FAQs";
 import Footer from "./Components/Footer";
 import Process from "./PageComponents/how-we-work";
 import FinalCTA from "./PageComponents/FinalCTA";
+import Testimonials from "./PageComponents/Testimonials";
 
 const page = () => {
   return (
@@ -21,6 +22,7 @@ const page = () => {
         <ProjectsGrid />
         <Process />
         <FAQs />
+        <Testimonials/>
         <FinalCTA />
       </main>
 
