@@ -67,6 +67,19 @@ const Testimonials = () => {
             Testimonials
           </span>
         </div>
+        <div className="text-center mb-5">
+                      <h2 className="font-bold mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+            Illuminating Digital Experiences
+          </h2>
+
+          <p className="text-gray-500 max-w-3xl mx-auto">
+            From concept to launch, UjjyaloWeb helps businesses transform ideas
+            into high-performing digital products.
+            <br />
+            We combine strategy, design, and engineering to create experiences
+            that are fast, scalable, and built for growth.
+          </p>
+        </div>
         <div
           className={`
               flex gap-6 sm:gap-8 md:gap-10 whitespace-nowrap
