@@ -7,142 +7,143 @@ const OpeningModal = () => {
   const [open, setOpen] = useState(true);
   const [pricingOpen, setPricingOpen] = useState(false);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handlepricingOpen = () => {
-    setPricingOpen(true);
-  };
-
-  const handlepricingClose = () => {
-    setPricingOpen(false);
-  };
+  if (!open) return null;
 
   return (
     <>
-      {open && (
-        <>
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
-            <div className="relative px-[50px] py-[50px] rounded-2xl bg-[#0c2342] backdrop-blur-xl">
-              <div>
-                <button
-                  className="absolute top-2 right-5 py-2 px-3 bg-[#454443] rounded-xl hover:bg-[#454443]/60"
-                  onClick={handleClose}
-                >
-                  X
-                </button>
-              </div>
-              <div className="h-40 w-40 absolute top-[-35px] lg:left-55 left-35 z-10 relative">
-                <Image
-                  src={logo}
-                  alt="logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              {/* Modal Card */}
-              <motion.div
-                className="relative w-full max-w-xl rounded-2xl p-8 text-white border border-white/20 shadow-2xl"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  background: "rgba(255, 255, 255, 0.05)",
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
-                  border: "1px solid rgba(255, 255, 255, 0.1)",
-                  borderRadius: "25px",
-                  padding: "32px",
-                  boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
-                }}
-                whileHover={{
-                  scale: 1.02,
-                  y: -4,
-                }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeOut",
-                }}
-              >
-                {/* Light glow */}
-                <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
+      {/* MAIN MODAL */}
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#020617]/70 backdrop-blur-sm px-4">
+        <div className="relative w-full max-w-xl">
 
-                {/* Top badges */}
-                <div className="relative flex items-center justify-between text-sm mb-6">
-                  <span className="inline-block">
-                    Holiday Special 2026
-                    <span className="block h-[0.5px] w-full bg-white/50 rounded-full" />
-                  </span>
+          {/* Floating Logo */}
+          <motion.div
+            className="absolute -top-20 left-1/2 -translate-x-1/2 z-20 h-36 w-36 sm:h-40 sm:w-40"
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Image
+              src={logo}
+              alt="logo"
+              fill
+              priority
+              className="object-contain"
+            />
+          </motion.div>
 
-                  <span className="inline-block text-[#daa520]">
-                    Only 10 Spots Available!
-                    <span className="block h-[0.5px] w-full bg-white/50 rounded-full" />
-                  </span>
-                </div>
+          {/* Glass Card */}
+          <motion.div
+            className="
+              relative rounded-2xl p-8 pt-24 sm:pt-28
+              bg-[#0c2342]/95 backdrop-blur-xl
+              border border-white/10
+              shadow-[0_20px_60px_rgba(2,6,23,0.8)]
+              text-[#e5e7eb]
+            "
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            whileHover={{ scale: 1.02, y: -4 }}
+          >
+            {/* Subtle glow */}
+            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-white/5 via-transparent to-cyan-400/5" />
 
-                {/* Heading */}
-                <h1 className="relative text-7xl font-bold leading-tight mb-6">
-                  Build Your <br />
-                  Website <br />
-                  <span className="font-semibold text-white/90">
-                    at your price.
-                  </span>
-                </h1>
+            {/* Close Button */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-4 right-4 px-3 py-1 rounded-xl bg-white/10 hover:bg-white/20 transition"
+            >
+              ✕
+            </button>
 
-                {/* Sub text */}
-                <p className="relative text-xl text-white/80 text-center mb-6">
-                  You set the budget. We deliver quality.
-                  <br />
-                  <span className="text-white text-xl text-center font-medium">
-                    First come, first served.
-                  </span>
-                </p>
+            {/* Top Badges */}
+            <div className="flex items-center justify-between text-sm mb-6">
+              <span className="text-[#e5e7eb]">
+                Holiday Special 2026
+                <span className="block h-[0.5px] w-full bg-white/30 mt-1" />
+              </span>
 
-                {/* CTA */}
-                <div className="mb-6">
-                  <div className="relative flex justify-center">
-                    <button className="rounded-full px-9 py-1 bg-white/15 backdrop-blur-md border border-white/30 font-semibold text-[#daa520] hover:scale-105 hover:bg-white/25 transition-all duration-300">
-                      Claim Your Spot
-                    </button>
-                  </div>
-                  <div className="flex justify-center">
-                    <button
-                      className="text-center text-xs underline mt-2"
-                      onClick={handlepricingOpen}
-                    >
-                      see pricing options
-                    </button>
-                  </div>
-                </div>
-                {/* Footer */}
-                <div className="relative flex flex-wrap justify-between text-xs text-white/70">
-                  <span>⚡ Spots filling fast</span>
-                  <span>• Only 10 projects accepted</span>
-                  <span>• Offer ends Jan 5, 2026</span>
-                </div>
-              </motion.div>
+              <span className="text-[#38bdf8]">
+                Only 10 Spots Available
+                <span className="block h-[0.5px] w-full bg-[#38bdf8]/40 mt-1" />
+              </span>
             </div>
-          </div>
 
-          {pricingOpen && (
-            <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
-              <div
-                className="relative px-[50px] py-[50px] rounded-2xl bg-[#0c2342] backdrop-blur-xl text-white"
-                onClick={(e) => e.stopPropagation()}
+            {/* Heading */}
+            <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-6 text-center sm:text-left">
+              Build Your <br />
+              Website <br />
+              <span className="text-[#daa520] font-semibold">
+                at your price.
+              </span>
+            </h1>
+
+            {/* Subtext */}
+            <p className="text-lg sm:text-xl text-[#9ca3af] text-center mb-6">
+              You set the budget. We deliver quality.
+              <br />
+              <span className="text-[#e5e7eb] font-medium">
+                First come, first served.
+              </span>
+            </p>
+
+            {/* CTA */}
+            <div className="mb-6 text-center">
+              <button
+                className="
+                  rounded-full px-10 py-3
+                  bg-gradient-to-r from-[#daa520] to-[#facc15]
+                  text-[#0c2342] font-bold
+                  shadow-lg shadow-[#daa520]/30
+                  hover:scale-105 hover:shadow-xl
+                  transition-all
+                "
               >
-                <div>
-                  <button
-                    className="absolute top-2 right-5 py-2 px-3 bg-[#454443] rounded-xl hover:bg-[#454443]/60"
-                    onClick={handlepricingClose}
-                  >
-                    X
-                  </button>
-                </div>
-                <h1>This is pricing Modal</h1>
-              </div>
+                Claim Your Spot
+              </button>
+
+              <button
+                onClick={() => setPricingOpen(true)}
+                className="block mt-2 text-xs underline mx-auto text-[#9ca3af] hover:text-[#e5e7eb]"
+              >
+                see pricing options
+              </button>
             </div>
-          )}
-        </>
+
+            {/* Footer */}
+            <div className="flex flex-wrap justify-center gap-3 text-xs text-[#9ca3af]">
+              <span>⚡ Spots filling fast</span>
+              <span>• Only 10 projects accepted</span>
+              <span>• Offer ends Jan 5, 2026</span>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* PRICING MODAL */}
+      {pricingOpen && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#020617]/70 backdrop-blur-sm px-4">
+          <motion.div
+            className="relative bg-[#0c2342]/95 text-[#e5e7eb] rounded-2xl p-8 max-w-md w-full border border-white/10"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.25 }}
+          >
+            <button
+              onClick={() => setPricingOpen(false)}
+              className="absolute top-4 right-4 px-3 py-1 rounded-xl bg-white/10 hover:bg-white/20"
+            >
+              ✕
+            </button>
+
+            <h1 className="text-2xl font-semibold mb-4 text-[#daa520]">
+              Pricing Options
+            </h1>
+
+            <p className="text-[#9ca3af]">
+              Flexible pricing based on your budget and project scope.
+            </p>
+          </motion.div>
+        </div>
       )}
     </>
   );
