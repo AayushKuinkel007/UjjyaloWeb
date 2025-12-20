@@ -150,7 +150,7 @@ const Footer = () => {
                     setPrivacyOpen(true);
                   }}
                 >
-                  Privay Policy
+                  Privacy Policy
                 </li>
                 <li
                   className="text-gray-400 hover:text-white hover:cursor-pointer"
