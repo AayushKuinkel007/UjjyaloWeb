@@ -5,6 +5,8 @@ import logo from "../Assets/logo.svg";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Privacy from "../Conditions/Privacy";
+import Terms from "../Conditions/Terms";
 
 const Footer = () => {
   const handleSmoothScroll = (e, targetId) => {
@@ -223,21 +225,33 @@ const Footer = () => {
       {privacyOpen && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#020617]/70 backdrop-blur-sm px-4">
           <motion.div
-            className="relative bg-[#0c2342]/95 text-[#e5e7eb] rounded-2xl p-8 max-w-md w-full border border-white/10"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.25 }}
+            className="
+        relative
+        bg-[#0c2342]/95
+        text-[#e5e7eb]
+        rounded-2xl
+        w-full
+        max-w-3xl
+        max-h-[85vh]
+        overflow-hidden
+        border border-white/10
+      "
           >
+            {/* Close button */}
             <button
               onClick={() => setPrivacyOpen(false)}
-              className="absolute top-4 right-4 px-3 py-1 rounded-xl bg-white/10 hover:bg-white/20"
+              className="absolute top-2 right-5 z-10 px-1 py-1 rounded-full bg-white/10 hover:bg-white/20"
             >
               ✕
             </button>
 
-            <h1 className="text-2xl font-semibold mb-4 text-[#daa520]">
-              Privacy Policy
-            </h1>
+            {/* Scrollable content */}
+            <div className="overflow-y-auto max-h-[85vh] p-6 sm:p-8">
+              <Privacy />
+            </div>
           </motion.div>
         </div>
       )}
@@ -245,21 +259,33 @@ const Footer = () => {
       {termsOpen && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#020617]/70 backdrop-blur-sm px-4">
           <motion.div
-            className="relative bg-[#0c2342]/95 text-[#e5e7eb] rounded-2xl p-8 max-w-md w-full border border-white/10"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.25 }}
+            className="
+        relative
+        bg-[#0c2342]/95
+        text-[#e5e7eb]
+        rounded-2xl
+        w-full
+        max-w-3xl
+        max-h-[85vh]
+        overflow-hidden
+        border border-white/10
+      "
           >
+            {/* Close button */}
             <button
               onClick={() => setTermsOpen(false)}
-              className="absolute top-4 right-4 px-3 py-1 rounded-xl bg-white/10 hover:bg-white/20"
+              className="absolute top-2 right-5 z-10 px-1 py-1 rounded-full bg-white/10 hover:bg-white/20"
             >
               ✕
             </button>
 
-            <h1 className="text-2xl font-semibold mb-4 text-[#daa520]">
-              Terms of Service
-            </h1>
+            {/* Scrollable content */}
+            <div className="overflow-y-auto max-h-[85vh] p-6 sm:p-8">
+              <Terms />
+            </div>
           </motion.div>
         </div>
       )}

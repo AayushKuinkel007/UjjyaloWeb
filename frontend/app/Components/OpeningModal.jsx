@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import logo from "../Assets/logo.png";
 import Link from "next/link";
-
+import { Lightning } from "phosphor-react";
 const OpeningModal = () => {
   const [open, setOpen] = useState(true);
   const [pricingOpen, setPricingOpen] = useState(false);
@@ -50,7 +50,7 @@ const OpeningModal = () => {
             {/* Close Button */}
             <button
               onClick={() => setOpen(false)}
-              className="absolute top-4 right-4 px-3 py-1 rounded-xl bg-white/10 hover:bg-white/20 transition"
+              className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 transition"
             >
               ✕
             </button>
@@ -113,7 +113,7 @@ const OpeningModal = () => {
 
             {/* Footer */}
             <div className="flex flex-wrap justify-center gap-3 text-xs text-[#9ca3af]">
-              <span>⚡ Spots filling fast</span>
+              <span className="flex justify-start gap-1 items-center"> <Lightning/> Spots filling fast</span>
               <span>• Only 10 projects accepted</span>
               <span>• Offer ends Jan 5, 2026</span>
             </div>
@@ -132,7 +132,7 @@ const OpeningModal = () => {
           >
             <button
               onClick={() => setPricingOpen(false)}
-              className="absolute top-4 right-4 px-3 py-1 rounded-xl bg-white/10 hover:bg-white/20"
+              className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20"
             >
               ✕
             </button>
