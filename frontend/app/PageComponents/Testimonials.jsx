@@ -26,6 +26,13 @@ const Testimonials = () => {
       designation: "Developer",
       social: "@ujjyaloweb",
     },
+    {
+      description: "Ujjyalo lead my brand to Ujjyalo",
+      image: logo,
+      name: "Rohan Koirala",
+      designation: "Founder",
+      social: "@rohankoirala_77",
+    },
   ];
 
   const [scrollDir, setScrollDir] = useState("left");
