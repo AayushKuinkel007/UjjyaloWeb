@@ -62,9 +62,9 @@ const OpeningModal = () => {
                 <span className="block h-[0.5px] w-full bg-white/30 mt-1" />
               </span>
 
-              <span className="text-[#38bdf8]">
+              <span className="text-[#f48c25]">
                 Only 10 Spots Available
-                <span className="block h-[0.5px] w-full bg-[#38bdf8]/40 mt-1" />
+                <span className="block h-[0.5px] w-full bg-[#f48c25]/40 mt-1" />
               </span>
             </div>
 
@@ -72,7 +72,7 @@ const OpeningModal = () => {
             <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-6 text-center sm:text-left">
               Build Your <br />
               Website <br />
-              <span className="text-[#daa520] font-semibold">
+              <span className="text-[#f48c25] font-semibold">
                 at your price.
               </span>
             </h1>
@@ -91,7 +91,7 @@ const OpeningModal = () => {
               <button
                 className="
                   rounded-full px-10 py-3
-                  bg-gradient-to-r from-[#daa520] to-[#facc15]
+                  bg-[#f48c25]
                   text-[#0c2342] font-bold
                   shadow-lg shadow-[#daa520]/30
                   hover:scale-105 hover:shadow-xl
