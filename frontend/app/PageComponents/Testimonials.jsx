@@ -10,6 +10,7 @@ const Testimonials = () => {
       image: logo,
       name: "Aayush Kuinkel",
       designation: "Developer",
+      company: "Ujjyalo Web",
       social: "@ak_theboss69",
     },
     {
@@ -17,6 +18,7 @@ const Testimonials = () => {
       image: logo,
       name: "Susil Dhami",
       designation: "Developer",
+      company: "Ujjyalo Web",
       social: "@_susill",
     },
     {
@@ -24,6 +26,7 @@ const Testimonials = () => {
       image: logo,
       name: "Ujjyalo Web",
       designation: "Developer",
+      company: "Ujjyalo Web",
       social: "@ujjyaloweb",
     },
     {
@@ -31,6 +34,7 @@ const Testimonials = () => {
       image: logo,
       name: "Rohan Koirala",
       designation: "Founder",
+      company: "SEWE Nepal, OnlineBajaar",
       social: "@rohankoirala_77",
     },
   ];
@@ -96,6 +100,9 @@ const Testimonials = () => {
                         </h3>
                         <p className="text-white/60 text-xs">
                           {testimonial.designation}
+                        </p>
+                        <p className="text-white/60 text-xs">
+                          {testimonial.company}
                         </p>
                         <Link
                           href={`https://instagram.com/${testimonial.social.replace(
