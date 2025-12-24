@@ -12,6 +12,9 @@ const { notFound, errorHandler } = require('./middleware/errorHandler');
 
 const app = express();
 
+// trust proxy settings
+app.set('trust proxy', 1);
+
 // Security
 app.use(helmet());
 
