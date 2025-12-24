@@ -25,7 +25,7 @@ const verifyEmailConfig = () => {
   });
 };
 
-// Generate notification email HTML (to UjjaloWeb team)
+// Generate notification email HTML (to UjjyaloWeb team)
 const getNotificationEmailHTML = (contact) => {
   return `
     <!DOCTYPE html>
@@ -103,13 +103,13 @@ const getNotificationEmailHTML = (contact) => {
           </div>
           
           <div style="text-align: center;">
-            <a href="mailto:${contact.email}?subject=Re: Your inquiry to UjjaloWeb" class="button">
+            <a href="mailto:${contact.email}?subject=Re: Your inquiry to UjjyaloWeb" class="button">
               Reply to ${contact.name}
             </a>
           </div>
         </div>
         <div class="footer">
-          <p>This is an automated notification from UjjaloWeb contact form.</p>
+          <p>This is an automated notification from UjjyaloWeb contact form.</p>
           <p>Contact ID: ${contact._id}</p>
         </div>
       </div>
@@ -140,7 +140,7 @@ const getAutoReplyEmailHTML = (contact) => {
     <body>
       <div class="container">
         <div class="header">
-          <h1>✨ Thank You for Contacting UjjaloWeb!</h1>
+          <h1>✨ Thank You for Contacting UjjyaloWeb!</h1>
         </div>
         <div class="content">
           <p>Hi ${contact.name},</p>
@@ -168,7 +168,7 @@ const getAutoReplyEmailHTML = (contact) => {
           <p>Don't forget - we're currently offering our <strong>"You Set The Price"</strong> promotion! Only 10 spots available, and they're filling fast.</p>
           
           <div style="text-align: center;">
-            <a href="https://wa.me/9779745347065?text=Hi%20UjjaloWeb%2C%20I%20just%20submitted%20a%20contact%20form" class="button">
+            <a href="https://wa.me/9779745347065?text=Hi%20UjjyaloWeb%2C%20I%20just%20submitted%20a%20contact%20form" class="button">
               💬 Chat on WhatsApp
             </a>
           </div>
@@ -177,21 +177,21 @@ const getAutoReplyEmailHTML = (contact) => {
           <p>
             📞 <strong>Phone:</strong> +977 9745347065<br>
             📧 <strong>Email:</strong> ujjyaloweb@gmail.com<br>
-            💼 <strong>Instagram:</strong> @ujjaloweb
+            💼 <strong>Instagram:</strong> @ujjyaloweb
           </p>
           
           <p>Looking forward to working with you!</p>
           
           <p>
             Best regards,<br>
-            <strong>The UjjaloWeb Team</strong><br>
+            <strong>The UjjyaloWeb Team</strong><br>
             <em>Bringing Your Brand Into Light</em>
           </p>
         </div>
         <div class="footer">
-          <p><strong>UjjaloWeb</strong></p>
+          <p><strong>UjjyaloWeb</strong></p>
           <p>Kathmandu, Nepal</p>
-          <p>ujjyaloweb.com | @ujjaloweb</p>
+          <p>ujjyaloweb.com | @ujjyaloweb</p>
           <p style="font-size: 12px; margin-top: 15px;">
             This is an automated confirmation. Please do not reply to this email.
           </p>
@@ -202,11 +202,11 @@ const getAutoReplyEmailHTML = (contact) => {
   `;
 };
 
-// Send notification email to UjjaloWeb team
+// Send notification email to UjjyaloWeb team
 const sendNotificationEmail = async (contact) => {
   try {
     const info = await transporter.sendMail({
-      from: `"UjjaloWeb" <${process.env.GMAIL_USER}>`,
+      from: `"UjjyaloWeb" <${process.env.GMAIL_USER}>`,
       to: process.env.NOTIFICATION_EMAIL || process.env.GMAIL_USER,
       subject: `🔔 New Contact: ${contact.name} - ${contact.services[0]}`,
       html: getNotificationEmailHTML(contact),
@@ -224,9 +224,9 @@ const sendNotificationEmail = async (contact) => {
 const sendAutoReplyEmail = async (contact) => {
   try {
     const info = await transporter.sendMail({
-      from: `"UjjaloWeb" <${process.env.GMAIL_USER}>`,
+      from: `"UjjyaloWeb" <${process.env.GMAIL_USER}>`,
       to: contact.email,
-      subject: '✨ Thank You for Contacting UjjaloWeb - We\'ll Be In Touch Soon!',
+      subject: '✨ Thank You for Contacting UjjyaloWeb - We\'ll Be In Touch Soon!',
       html: getAutoReplyEmailHTML(contact),
     });
 
