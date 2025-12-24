@@ -77,6 +77,7 @@ const budgets = [
 const timelines = ["ASAP", "2-4 weeks", "1-3 months", "Flexible"];
 
 const Contacts = () => {
+  // Form state
   const [selectedServices, setSelectedServices] = useState([]);
   const [selectedBudget, setSelectedBudget] = useState("");
   const [selectedTimeline, setSelectedTimeline] = useState("");
@@ -87,6 +88,11 @@ const Contacts = () => {
     company: "",
     message: "",
   });
+
+  // UI state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+  const [errorMessage, setErrorMessage] = useState("");
 
   const toggleService = (service) => {
     setSelectedServices((prev) =>
@@ -104,25 +110,144 @@ const Contacts = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    setErrorMessage("");
 
-    const submissionData = {
-      ...formData,
+    // Frontend validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setSubmitStatus("error");
+      setErrorMessage("Please fill in all required fields");
+      setIsSubmitting(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (selectedServices.length === 0) {
+      setSubmitStatus("error");
+      setErrorMessage("Please select at least one service");
+      setIsSubmitting(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (!selectedBudget) {
+      setSubmitStatus("error");
+      setErrorMessage("Please select your project budget");
+      setIsSubmitting(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (!selectedTimeline) {
+      setSubmitStatus("error");
+      setErrorMessage("Please select your project timeline");
+      setIsSubmitting(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    // Prepare data for API
+    const submitData = {
+      name: formData.name,
+      email: formData.email,
+      company: formData.company || null,
       services: selectedServices,
       budget: selectedBudget,
       timeline: selectedTimeline,
-      readyToStart: isReady,
-      submittedAt: new Date().toISOString(),
+      message: formData.message,
+      isReady: isReady,
     };
 
-    console.log("=== FORM SUBMISSION DATA ===");
-    console.log(submissionData);
-    console.log("===========================");
+    try {
+      // Call backend API
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
+      
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submitData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        // Success!
+        setSubmitStatus("success");
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          message: "",
+        });
+        setSelectedServices([]);
+        setSelectedBudget("");
+        setSelectedTimeline("");
+        setIsReady(false);
+
+        // Scroll to top to show success message
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        // Auto-hide success message after 10 seconds
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 10000);
+      } else {
+        // Error from backend
+        setSubmitStatus("error");
+        setErrorMessage(result.error || "Something went wrong. Please try again.");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+      setErrorMessage(
+        "Network error. Please check your connection and try again. Make sure the backend is running on port 5001."
+      );
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section id="contact" className="min-h-screen py-12 md:py-16 px-4">
+      {/* Success/Error Message */}
+      {submitStatus && (
+        <div
+          className={`max-w-4xl mx-auto mb-6 p-4 rounded-lg border ${
+            submitStatus === "success"
+              ? "bg-green-500/10 border-green-500/50 text-green-400"
+              : "bg-red-500/10 border-red-500/50 text-red-400"
+          }`}
+        >
+          <div className="flex items-start gap-3">
+            {submitStatus === "success" ? (
+              <Check size={24} weight="bold" className="flex-shrink-0 mt-0.5" />
+            ) : (
+              <span className="text-2xl flex-shrink-0">❌</span>
+            )}
+            <div>
+              <p className="font-semibold mb-1">
+                {submitStatus === "success"
+                  ? "✨ Thank You!"
+                  : "Oops! Something went wrong"}
+              </p>
+              <p className="text-sm opacity-90">
+                {submitStatus === "success"
+                  ? "We've received your message and will get back to you within 24 hours. Check your email for confirmation!"
+                  : errorMessage}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <div className="mb-8 md:mb-12 max-w-4xl mx-auto text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4">
@@ -193,8 +318,9 @@ const Contacts = () => {
                     <input
                       type={type}
                       id={id}
-                      value={formData[id]}
+                      value={formData[id] || ""}
                       onChange={handleInputChange}
+                      required={required}
                       className="w-full border border-[#2a2a2a] rounded-lg px-3 md:px-4 py-2 md:py-2.5 bg-[#0f0f0f] text-sm md:text-base text-white placeholder:text-gray-600 outline-none focus:border-[#f48c25] focus:ring-1 focus:ring-[#f48c25]/20 transition-all duration-200"
                       placeholder={placeholder}
                     />
@@ -249,6 +375,7 @@ const Contacts = () => {
                   rows={6}
                   value={formData.message}
                   onChange={handleInputChange}
+                  required
                   className="w-full resize-none rounded-lg border border-[#2a2a2a] px-3 md:px-4 py-2 md:py-2.5 bg-[#0f0f0f] text-sm md:text-base text-white placeholder:text-gray-600 outline-none focus:border-[#f48c25] focus:ring-1 focus:ring-[#f48c25]/20 transition-all duration-200"
                   placeholder="What are you building?
 What problem are you trying to solve?
@@ -283,10 +410,43 @@ Who is it for?"
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full md:w-auto md:min-w-[280px] lg:min-w-[300px] flex justify-center items-center gap-2 px-6 md:px-8 py-3 md:py-3.5 rounded-lg text-sm md:text-base text-black font-semibold bg-[#f48c25] hover:bg-[#ff9933] hover:shadow-[0_0_30px_rgba(244,140,37,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] mx-auto"
+              disabled={isSubmitting}
+              className="w-full md:w-auto md:min-w-[280px] lg:min-w-[300px] flex justify-center items-center gap-2 px-6 md:px-8 py-3 md:py-3.5 rounded-lg text-sm md:text-base text-black font-semibold bg-[#f48c25] hover:bg-[#ff9933] hover:shadow-[0_0_30px_rgba(244,140,37,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] mx-auto disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              Illuminate My Project
-              <ArrowRight size={18} weight="bold" className="md:w-5 md:h-5" />
+              {isSubmitting ? (
+                <>
+                  <svg
+                    className="animate-spin h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                  Sending...
+                </>
+              ) : (
+                <>
+                  Illuminate My Project
+                  <ArrowRight
+                    size={18}
+                    weight="bold"
+                    className="md:w-5 md:h-5"
+                  />
+                </>
+              )}
             </button>
 
             <p className="text-center text-gray-400 text-xs sm:text-sm mt-5 md:mt-6">
@@ -301,7 +461,7 @@ Who is it for?"
               Your information is safe and will never be shared.
             </p>
             <Link href="/">
-              <p className="text-center text-white text-xs sm:text-sm flex justify-center items-center gap-1">
+              <p className="text-center text-white text-xs sm:text-sm flex justify-center items-center gap-1 hover:text-[#f48c25] transition-colors cursor-pointer">
                 <ArrowLeft size={14} weight="regular" />
                 Back To Home
               </p>
