@@ -3,16 +3,16 @@ const { sendNotificationEmail, sendAutoReplyEmail } = require('../utils/emailSer
 
 const submitContact = async (req, res) => {
   try {
-    const { 
-      name, 
-      email, 
-      company, 
-      services, 
-      budget, 
-      timeline, 
-      message, 
-      isReady 
-    } = req.body;
+      const { 
+          name, 
+          email, 
+          company, 
+          services, 
+          budget, 
+          timeline, 
+          message, 
+          isReady 
+        } = req.body;
 
     // Validate required fields
     if (!name || !email || !services || !budget || !timeline || !message) {
@@ -52,8 +52,6 @@ const submitContact = async (req, res) => {
       status: 'New',
       source: 'Website',
     });
-
-    console.log('Contact saved:', contact._id);
 
     // Send notification email to ujjyalo web
     sendNotificationEmail(contact).catch(err => 

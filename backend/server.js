@@ -2,7 +2,8 @@
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-require('dotenv').config();
+
+require('dotenv').config({ quiet: true });
 
 const connectDB = require('./config/database');
 const { verifyEmailConfig } = require('./utils/emailService');
@@ -61,8 +62,6 @@ const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log(`Client URL: ${process.env.CLIENT_URL || 'http://localhost:3000'}`);
-  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
 });
 
 process.on('SIGTERM', async () => {
