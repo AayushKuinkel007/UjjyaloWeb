@@ -43,7 +43,10 @@ const Header = () => {
       >
         {/* Logo */}
         <div
-          onClick={() => scrollTo("#home")}
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           className="cursor-pointer flex items-center ms-2"
         >
           <Image
