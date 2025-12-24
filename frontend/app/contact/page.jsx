@@ -81,6 +81,12 @@ const Contacts = () => {
   const [selectedBudget, setSelectedBudget] = useState("");
   const [selectedTimeline, setSelectedTimeline] = useState("");
   const [isReady, setIsReady] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+  });
 
   const toggleService = (service) => {
     setSelectedServices((prev) =>
@@ -88,6 +94,31 @@ const Contacts = () => {
         ? prev.filter((s) => s !== service)
         : [...prev, service]
     );
+  };
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const submissionData = {
+      ...formData,
+      services: selectedServices,
+      budget: selectedBudget,
+      timeline: selectedTimeline,
+      readyToStart: isReady,
+      submittedAt: new Date().toISOString(),
+    };
+
+    console.log("=== FORM SUBMISSION DATA ===");
+    console.log(submissionData);
+    console.log("===========================");
   };
 
   return (
@@ -134,7 +165,10 @@ const Contacts = () => {
         </div>
 
         {/* Form */}
-        <div className="rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] p-4 sm:p-6 md:p-8">
+        <form
+          onSubmit={handleSubmit}
+          className="rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] p-4 sm:p-6 md:p-8"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-4 md:gap-x-6 gap-y-4 md:gap-y-5">
             {/* Left Column */}
             <div className="space-y-4 md:space-y-5">
@@ -159,6 +193,8 @@ const Contacts = () => {
                     <input
                       type={type}
                       id={id}
+                      value={formData[id]}
+                      onChange={handleInputChange}
                       className="w-full border border-[#2a2a2a] rounded-lg px-3 md:px-4 py-2 md:py-2.5 bg-[#0f0f0f] text-sm md:text-base text-white placeholder:text-gray-600 outline-none focus:border-[#f48c25] focus:ring-1 focus:ring-[#f48c25]/20 transition-all duration-200"
                       placeholder={placeholder}
                     />
@@ -209,7 +245,10 @@ const Contacts = () => {
                   <span className="text-[#f48c25] ml-1">*</span>
                 </label>
                 <textarea
+                  id="message"
                   rows={6}
+                  value={formData.message}
+                  onChange={handleInputChange}
                   className="w-full resize-none rounded-lg border border-[#2a2a2a] px-3 md:px-4 py-2 md:py-2.5 bg-[#0f0f0f] text-sm md:text-base text-white placeholder:text-gray-600 outline-none focus:border-[#f48c25] focus:ring-1 focus:ring-[#f48c25]/20 transition-all duration-200"
                   placeholder="What are you building?
 What problem are you trying to solve?
@@ -242,7 +281,10 @@ Who is it for?"
             </label>
 
             {/* Submit Button */}
-            <button className="w-full md:w-auto md:min-w-[280px] lg:min-w-[300px] flex justify-center items-center gap-2 px-6 md:px-8 py-3 md:py-3.5 rounded-lg text-sm md:text-base text-black font-semibold bg-[#f48c25] hover:bg-[#ff9933] hover:shadow-[0_0_30px_rgba(244,140,37,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] mx-auto">
+            <button
+              type="submit"
+              className="w-full md:w-auto md:min-w-[280px] lg:min-w-[300px] flex justify-center items-center gap-2 px-6 md:px-8 py-3 md:py-3.5 rounded-lg text-sm md:text-base text-black font-semibold bg-[#f48c25] hover:bg-[#ff9933] hover:shadow-[0_0_30px_rgba(244,140,37,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] mx-auto"
+            >
               Illuminate My Project
               <ArrowRight size={18} weight="bold" className="md:w-5 md:h-5" />
             </button>
@@ -265,7 +307,7 @@ Who is it for?"
               </p>
             </Link>
           </div>
-        </div>
+        </form>
       </div>
     </section>
   );
