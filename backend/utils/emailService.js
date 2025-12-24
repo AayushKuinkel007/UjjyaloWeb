@@ -1,28 +1,30 @@
 // utils/emailService.js
-const nodemailer = require('nodemailer');
+const brevo = require('@getbrevo/brevo');
 
-// Create email transporter
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
-});
+// Initialize Brevo API client
+const apiInstance = new brevo.TransactionalEmailsApi();
+apiInstance.setApiKey(
+  brevo.TransactionalEmailsApiApiKeys.apiKey,
+  process.env.BREVO_API_KEY
+);
 
 // Verify email configuration
-const verifyEmailConfig = () => {
-  return new Promise((resolve, reject) => {
-    transporter.verify((error, success) => {
-      if (error) {
-        console.error('Email configuration error:', error);
-        reject(error);
-      } else {
-        console.log('Email server ready to send messages');
-        resolve(success);
-      }
-    });
-  });
+const verifyEmailConfig = async () => {
+  try {
+    // Test the API key by getting account info
+    const accountApi = new brevo.AccountApi();
+    accountApi.setApiKey(
+      brevo.AccountApiApiKeys.apiKey,
+      process.env.BREVO_API_KEY
+    );
+    
+    await accountApi.getAccount();
+    console.log('Brevo email service ready to send messages');
+    return true;
+  } catch (error) {
+    console.error('Brevo configuration error:', error.message);
+    return false;
+  }
 };
 
 // Generate notification email HTML (to UjjyaloWeb team)
@@ -205,15 +207,26 @@ const getAutoReplyEmailHTML = (contact) => {
 // Send notification email to UjjyaloWeb team
 const sendNotificationEmail = async (contact) => {
   try {
-    const info = await transporter.sendMail({
-      from: `"UjjyaloWeb" <${process.env.GMAIL_USER}>`,
-      to: process.env.NOTIFICATION_EMAIL || process.env.GMAIL_USER,
-      subject: `🔔 New Contact: ${contact.name} - ${contact.services[0]}`,
-      html: getNotificationEmailHTML(contact),
-    });
+    const sendSmtpEmail = new brevo.SendSmtpEmail();
 
-    console.log('Notification email sent:', info.messageId);
-    return { success: true, messageId: info.messageId };
+    sendSmtpEmail.sender = {
+      name: process.env.SENDER_NAME || 'UjjyaloWeb',
+      email: process.env.SENDER_EMAIL,
+    };
+
+    sendSmtpEmail.to = [
+      {
+        email: process.env.NOTIFICATION_EMAIL || process.env.SENDER_EMAIL,
+        name: 'UjjyaloWeb Team',
+      },
+    ];
+
+    sendSmtpEmail.subject = `🔔 New Contact: ${contact.name} - ${contact.services[0]}`;
+    sendSmtpEmail.htmlContent = getNotificationEmailHTML(contact);
+
+    const data = await apiInstance.sendTransacEmail(sendSmtpEmail);
+    console.log('Notification email sent:', data.messageId);
+    return { success: true, messageId: data.messageId };
   } catch (error) {
     console.error('Notification email error:', error);
     return { success: false, error: error.message };
@@ -223,15 +236,26 @@ const sendNotificationEmail = async (contact) => {
 // Send auto-reply email to customer
 const sendAutoReplyEmail = async (contact) => {
   try {
-    const info = await transporter.sendMail({
-      from: `"UjjyaloWeb" <${process.env.GMAIL_USER}>`,
-      to: contact.email,
-      subject: '✨ Thank You for Contacting UjjyaloWeb - We\'ll Be In Touch Soon!',
-      html: getAutoReplyEmailHTML(contact),
-    });
+    const sendSmtpEmail = new brevo.SendSmtpEmail();
 
-    console.log('Auto-reply email sent:', info.messageId);
-    return { success: true, messageId: info.messageId };
+    sendSmtpEmail.sender = {
+      name: process.env.SENDER_NAME || 'UjjyaloWeb',
+      email: process.env.SENDER_EMAIL,
+    };
+
+    sendSmtpEmail.to = [
+      {
+        email: contact.email,
+        name: contact.name,
+      },
+    ];
+
+    sendSmtpEmail.subject = "✨ Thank You for Contacting UjjyaloWeb - We'll Be In Touch Soon!";
+    sendSmtpEmail.htmlContent = getAutoReplyEmailHTML(contact);
+
+    const data = await apiInstance.sendTransacEmail(sendSmtpEmail);
+    console.log('Auto-reply email sent:', data.messageId);
+    return { success: true, messageId: data.messageId };
   } catch (error) {
     console.error('Auto-reply email error:', error);
     return { success: false, error: error.message };
