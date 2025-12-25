@@ -12,17 +12,18 @@ const projects = [
     link: "https://cafe-nine-sandy.vercel.app/?fbclid=PAVERFWAOrNQRleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafOVqQ89q3E87eDdl_5TCtSYg2A99o_l-IuSlczkRkRxmq9I87-xbF8V4xD5g_aem_lbJuuHPqSAgnHGO4TXzXsw",
     flex: "flex-[1.4]",
   },
+
   {
     id: 2,
-    title: "How to Order",
-    image: "/projects/howtoorder.png",
+    title: "Ready to Expand",
+    image: "/projects/onlinebajaarfooter.png",
     link: "https://www.onlinebajaar.com/",
     flex: "flex-[0.6]",
   },
   {
     id: 3,
-    title: "Ready to Expand",
-    image: "/projects/onlinebajaarfooter.png",
+    title: "How to Order",
+    image: "/projects/howtoorder.png",
     link: "https://cafe-nine-sandy.vercel.app/?fbclid=PAVERFWAOrNQRleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafOVqQ89q3E87eDdl_5TCtSYg2A99o_l-IuSlczkRkRxmq9I87-xbF8V4xD5g_aem_lbJuuHPqSAgnHGO4TXzXsw",
     flex: "flex-[0.6]",
   },
@@ -136,11 +137,11 @@ export default function ProjectsGrid() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   return (
