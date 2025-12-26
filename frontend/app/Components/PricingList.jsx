@@ -2,6 +2,7 @@
 import React from "react";
 import { CheckCircle } from "phosphor-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const pricingPlans = [
   {
@@ -104,7 +105,9 @@ const PricingList = ({ setPricingOpen }) => {
               </h2>
 
               {/* DESCRIPTION */}
-              <p className="text-[#a8b3c1] text-center text-sm mb-4">{plan.description}</p>
+              <p className="text-[#a8b3c1] text-center text-sm mb-4">
+                {plan.description}
+              </p>
 
               {/* PRICE */}
               <h3 className="text-2xl font-bold text-white mb-6">
@@ -132,18 +135,20 @@ const PricingList = ({ setPricingOpen }) => {
               </ul>
 
               {/* CTA BUTTON */}
-              <button
-                className="
+              <Link href="/contact"
+                
+                  className="
                   rounded-full px-10 py-3
                   bg-[#f48c25]
                   text-[#0c2342] font-bold
                   shadow-lg shadow-[#daa520]/30
                   hover:scale-105 hover:shadow-xl
-                  transition-all
+                  transition-all text-center
                 "
-              >
-                {plan.buttonText}
-              </button>
+                >
+                  {plan.buttonText}
+
+              </Link>
             </motion.div>
           ))}
         </div>
