@@ -5,6 +5,7 @@ import logo from "../Assets/logo.png";
 import Link from "next/link";
 import { Lightning } from "phosphor-react";
 import PricingList from "./PricingList";
+
 const OpeningModal = () => {
   const [open, setOpen] = useState(true);
   const [pricingOpen, setPricingOpen] = useState(false);
@@ -14,11 +15,15 @@ const OpeningModal = () => {
   return (
     <>
       {/* MAIN MODAL */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#020617]/70 backdrop-blur-sm px-4">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#020617]/70 backdrop-blur-sm px-3 sm:px-4">
         <div className="relative w-full max-w-xl">
           {/* Floating Logo */}
           <motion.div
-            className="absolute -top-20 left-1/2 -translate-x-1/2 z-20 h-36 w-36 sm:h-40 sm:w-40"
+            className="
+              absolute -top-16 sm:-top-20
+              left-1/2 -translate-x-1/2 z-20
+              h-28 w-28 sm:h-40 sm:w-40
+            "
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -34,7 +39,9 @@ const OpeningModal = () => {
           {/* Glass Card */}
           <motion.div
             className="
-              relative rounded-2xl p-8 pt-24 sm:pt-28
+              relative rounded-2xl
+              p-5 sm:p-8
+              pt-20 sm:pt-28
               bg-[#0c2342]/95 backdrop-blur-xl
               border border-white/10
               shadow-[0_20px_60px_rgba(2,6,23,0.8)]
@@ -51,14 +58,18 @@ const OpeningModal = () => {
             {/* Close Button */}
             <button
               onClick={() => setOpen(false)}
-              className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 transition"
+              className="
+                absolute top-3 right-3 sm:top-4 sm:right-4
+                px-3 py-1 rounded-full
+                bg-white/10 hover:bg-white/20 transition
+              "
             >
               ✕
             </button>
 
             {/* Top Badges */}
-            <div className="flex items-center justify-between text-sm mb-6">
-              <span className="text-[#e5e7eb]">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-3 text-xs sm:text-sm mb-6 text-center sm:text-left">
+              <span>
                 Holiday Special 2026
                 <span className="block h-[0.5px] w-full bg-white/30 mt-1" />
               </span>
@@ -70,16 +81,16 @@ const OpeningModal = () => {
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-6 text-center sm:text-left">
-              Build Your <br />
-              Website <br />
+            <h1 className="text-3xl sm:text-6xl font-bold leading-tight mb-5 text-center sm:text-left">
+              Build Your <br className="hidden sm:block" />
+              Website <br className="hidden sm:block" />
               <span className="text-[#f48c25] font-semibold">
                 at your price.
               </span>
             </h1>
 
             {/* Subtext */}
-            <p className="text-lg sm:text-xl text-[#9ca3af] text-center mb-6">
+            <p className="text-base sm:text-xl text-[#9ca3af] text-center mb-6">
               You set the budget. We deliver quality.
               <br />
               <span className="text-[#e5e7eb] font-medium">
@@ -92,13 +103,14 @@ const OpeningModal = () => {
               <Link href="contact">
                 <button
                   className="
-                  rounded-full px-10 py-3
-                  bg-[#f48c25]
-                  text-[#0c2342] font-bold
-                  shadow-lg shadow-[#daa520]/30
-                  hover:scale-105 hover:shadow-xl
-                  transition-all
-                "
+                    w-full sm:w-auto
+                    rounded-full px-8 sm:px-10 py-3
+                    bg-[#f48c25]
+                    text-[#0c2342] font-bold
+                    shadow-lg shadow-[#daa520]/30
+                    hover:scale-105 hover:shadow-xl
+                    transition-all
+                  "
                 >
                   Claim Your Spot
                 </button>
@@ -106,16 +118,15 @@ const OpeningModal = () => {
 
               <button
                 onClick={() => setPricingOpen(true)}
-                className="block mt-2 text-xs underline mx-auto text-[#9ca3af] hover:text-[#e5e7eb]"
+                className="block mt-3 text-xs underline mx-auto text-[#9ca3af] hover:text-[#e5e7eb]"
               >
                 see pricing options
               </button>
             </div>
 
             {/* Footer */}
-            <div className="flex flex-wrap justify-center gap-3 text-xs text-[#9ca3af]">
-              <span className="flex justify-start gap-1 items-center">
-                {" "}
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs text-[#9ca3af] text-center">
+              <span className="flex justify-center gap-1 items-center">
                 <Lightning /> Spots filling fast
               </span>
               <span>• Only 10 projects accepted</span>
