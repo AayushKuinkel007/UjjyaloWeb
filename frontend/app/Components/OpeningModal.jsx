@@ -4,6 +4,7 @@ import Image from "next/image";
 import logo from "../Assets/logo.png";
 import Link from "next/link";
 import { Lightning } from "phosphor-react";
+import PricingList from "./PricingList";
 const OpeningModal = () => {
   const [open, setOpen] = useState(true);
   const [pricingOpen, setPricingOpen] = useState(false);
@@ -113,7 +114,10 @@ const OpeningModal = () => {
 
             {/* Footer */}
             <div className="flex flex-wrap justify-center gap-3 text-xs text-[#9ca3af]">
-              <span className="flex justify-start gap-1 items-center"> <Lightning/> Spots filling fast</span>
+              <span className="flex justify-start gap-1 items-center">
+                {" "}
+                <Lightning /> Spots filling fast
+              </span>
               <span>• Only 10 projects accepted</span>
               <span>• Offer ends Jan 5, 2026</span>
             </div>
@@ -122,31 +126,7 @@ const OpeningModal = () => {
       </div>
 
       {/* PRICING MODAL */}
-      {pricingOpen && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#020617]/70 backdrop-blur-sm px-4">
-          <motion.div
-            className="relative bg-[#0c2342]/95 text-[#e5e7eb] rounded-2xl p-8 max-w-md w-full border border-white/10"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.25 }}
-          >
-            <button
-              onClick={() => setPricingOpen(false)}
-              className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20"
-            >
-              ✕
-            </button>
-
-            <h1 className="text-2xl font-semibold mb-4 text-[#daa520]">
-              Pricing Options
-            </h1>
-
-            <p className="text-[#9ca3af]">
-              Flexible pricing based on your budget and project scope.
-            </p>
-          </motion.div>
-        </div>
-      )}
+      {pricingOpen && <PricingList setPricingOpen={setPricingOpen} />}
     </>
   );
 };
