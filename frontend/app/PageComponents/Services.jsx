@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   Code,
   PaintBrush,
@@ -165,9 +166,9 @@ const Services = () => {
                 ))}
               </ul>
 
-              <button className="mt-auto text-white group-hover:text-[#f48c25] font-medium flex items-center gap-2 hover:bg-[#f48c25] hover:text-black w-fit px-4 py-2 rounded-xl transition-colors">
+              <Link className="mt-auto text-white group-hover:text-[#f48c25] font-medium flex items-center gap-2 bg-[#f48c25] md:bg-transparent hover:bg-[#f48c25] hover:text-black w-fit px-4 py-2 rounded-xl transition-colors" href="/contact">
                 Learn More <ArrowRight size={22} weight="bold" />
-              </button>
+              </Link>
             </motion.div>
           ))}
         </div>
