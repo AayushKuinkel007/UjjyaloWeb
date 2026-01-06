@@ -9,7 +9,7 @@ const pricingPlans = [
     id: 1,
     title: "Starter",
     description: "Best for individuals & early-stage ideas",
-    price: "NPR 8,000 - 15,000",
+    price: "NPR 10,000 - 15,000",
     buttonText: "Start with this budget",
     features: [
       "1–3 page website",
